@@ -128,82 +128,39 @@ window.onload = function() {
     contentLayout = document.getElementById("contentLayout");
 
   //header
-  var logoTile = document.getElementById("logoTile"),
-    logoTileSVG = logoTile.contentDocument,
-    tocTile = document.getElementById("tocTile"),
+  var navTile = document.getElementById("navTile"),
     tocHighliterLine = document.getElementById("tocHighliterLine"),
     tocSectionHighlight = document.getElementById("tocSectionHighlight");
 
-  //Logo Elements
-  function logoSVGid(id) {
-    return logoTileSVG.getElementById(id);
-  }
-  var fishEye01 = logoSVGid("fishEye01"),
-    fishEye02 = logoSVGid("fishEye02"),
-    fishEye03 = logoSVGid("fishEye03"),
-    sharkEye01 = logoSVGid("sharkEye01"),
-    sharkEye02 = logoSVGid("sharkEye02"),
-    sharkEye03 = logoSVGid("sharkEye03"),
-    sharkEye04 = logoSVGid("sharkEye04"),
-    sharkEye05 = logoSVGid("sharkEye05"),
-    sharkOutline01 = logoSVGid("sharkOutline01"),
-    sharkOutline02 = logoSVGid("sharkOutline02"),
-    sharkOutline03 = logoSVGid("sharkOutline03"),
-    sharkOutline04 = logoSVGid("sharkOutline04"),
-    sharkWater01 = logoSVGid("sharkWater01"),
-    sharkWater03 = logoSVGid("sharkWater03"),
-    sharkWater04 = logoSVGid("sharkWater04"),
-    sharkWaterBkg = logoSVGid("sharkWaterBkg");
-
 
   //Table of content button click event
-  var chrometoc1 = document.getElementById("toc1");
-  if (chrometoc1) {
-    chrometoc1.addEventListener("click", function() {
+  var navButton1 = document.getElementById("toc1");
+  if (navButton1) {
+    navButton1.addEventListener("click", function() {
       pageLoader(p1TilesInput);
     }, false);
   } else {
-    chrometoc1.attachEvent("onclick", function() {
+    navButton1.attachEvent("onclick", function() {
       pageLoader(p1TilesInput);
     }, false);
   }
-  var chrometoc2c = document.getElementById("toc2c");
-  if (chrometoc2c) {
-    chrometoc2c.addEventListener("click", function() {
+  var navButton2 = document.getElementById("toc2");
+  if (navButton2) {
+    navButton2.addEventListener("click", function() {
       pageLoader(p2TilesInput);
     }, false);
   } else {
-    chrometoc2c.attachEvent("onclick", function() {
+    navButton2.attachEvent("onclick", function() {
       pageLoader(p2TilesInput);
     }, false);
   }
-  var chrometoc2 = document.getElementById("toc2");
-  if (chrometoc2) {
-    chrometoc2.addEventListener("click", function() {
-      pageLoader(p2TilesInput);
-    }, false);
-  } else {
-    chrometoc2.attachEvent("onclick", function() {
-      pageLoader(p2TilesInput);
-    }, false);
-  }
-  var chrometoc3 = document.getElementById("toc3");
-  if (chrometoc3) {
-    chrometoc3.addEventListener("click", function() {
-      alert("Look! I'm clicking!!");
-    }, false);
-  } else {
-    chrometoc3.attachEvent("onclick", function() {
-      alert("Look! I'm clicking!!");
-    }, false);
-  }
-  var chrometoc4 = document.getElementById("toc4");
-  if (chrometoc4) {
-    chrometoc4.addEventListener("click", function() {
+  var navButton4 = document.getElementById("toc4");
+  if (navButton4) {
+    navButton4.addEventListener("click", function() {
       tlp1C.invalidate().restart().clear();
     }, false);
   } else {
-    chrometoc4.attachEvent("onclick", function() {
+    navButton4.attachEvent("onclick", function() {
       tlp1C.invalidate().restart().clear();
     }, false);
   }
@@ -256,7 +213,7 @@ window.onload = function() {
     bkgColor: "hsl(196, 75%, 75%)",
     strongColor: "hsl(196, 25%, 38%)",
     weakColor: "hsl(196, 75%, 75%)",
-    tocHighliterPosition: "106px",
+    tocHighliterPosition: "85px",
     timeline: [tlp1C, tlp1CSt],
     animation: p1Animation,
     initAnimation: true
@@ -270,7 +227,7 @@ window.onload = function() {
     bkgColor: "hsl(318, 75%, 75%)",
     strongColor: "hsl(318, 25%, 38%)",
     weakColor: "hsl(318, 75%, 75%)",
-    tocHighliterPosition: "160px",
+    tocHighliterPosition: "320px",
     timeline: [tlp2C, tlp2CWind, tlp2cStar1, tlp2cStar2, tlp2cStar3, tlp2cStar4, tlp2cStar5, tlp2cStar6, tlp2cStar7, tlp2cStar8, tlp2cStar9, tlp2cStar10, tlp2cStar11],
     animation: p2Animation,
     initAnimation: true
@@ -485,14 +442,6 @@ window.onload = function() {
     });
   }
 
-  function headerAppear() {
-    var tl = new TimelineMax();
-    tl.call(tileAppear, [logoTile, "ltr"], "initialLoadLable").call(tileAppear, [tocTile], this, "initialLoadLable+=0.15");
-    headerStat = true;
-  }
-
-
-  var tocReeed = 0;
 
   function pageFlip(toPage) {
     if (toPage.pNumber !== currentPage && flippingPage !== true) {
@@ -516,20 +465,6 @@ window.onload = function() {
 
       previousPage = currentPage;
       currentPage = toPage.pNumber;
-
-
-      var newReeed = 0;
-
-      switch (toPage.pNumber) {
-        case 2:
-          //tlp1CSt.paused(!tlp1CSt.paused());
-          newReeed = document.getElementById("toc2");
-          break;
-        case 3:
-          newReeed = document.getElementById("toc3");
-          break;
-      }
-
 
       for (var i = 0; i < toPage.pTilesIDs.length; i++) {
         toPage.pTilesIDs[i].setAttribute("style", "display:block");
@@ -564,37 +499,12 @@ window.onload = function() {
           attr: {
             "stroke": toPage.weakColor
           }
-        }, 0).to([sharkWater01, sharkWaterBkg, sharkOutline01, sharkEye01], bkgColorChangeDuration, {
-          attr: {
-            "fill": toPage.weakColor
-          }
-        }, 0).to([sharkOutline01, sharkEye01], bkgColorChangeDuration, {
-          attr: {
-            "fill": toPage.strongColor
-          }
         }, 0).to(tocSectionHighlight, bkgColorChangeDuration, {
           css: {
-            top: toPage.tocHighliterPosition,
+            left: toPage.tocHighliterPosition,
             ease: Power3.easeOut
           }
         }, 0);
-
-        if (tocReeed !== 0) {
-          tl.to(tocReeed, bkgColorChangeDuration, {
-            css: {
-              color: blackColor
-            }
-          }, 0);
-          tocReeed = 0;
-        }
-        if (newReeed !== 0) {
-          tl.to(newReeed, bkgColorChangeDuration, {
-            css: {
-              color: redColor
-            }
-          }, 0);
-          tocReeed = newReeed;
-        }
       }
       if (flipDuration === undefined) {
         flipDuration = 0.9 + 0.15 * toPage.pTilesIDs.length;
@@ -626,189 +536,8 @@ window.onload = function() {
     }
   }
 
-  //header
-
-
-  function logoAnimation() {
-    var tllogoTile = new TimelineMax({
-      delay: 38,
-      repeat: -1,
-      repeatDelay: 60
-    });
-
-    // fish/shark Eye Play
-    tllogoTile.to(fishEye01, 0.5, {
-      morphSVG: {
-        shape: fishEye02,
-        shapeIndex: 3
-      }
-    }).to(fishEye01, 0.5, {
-      morphSVG: {
-        shape: fishEye01,
-        shapeIndex: 1
-      }
-    }).to(fishEye01, 0.5, {
-        morphSVG: {
-          shape: fishEye02,
-          shapeIndex: 3
-        }
-      },
-      "+=0.8").to(fishEye01, 0.5, {
-      morphSVG: {
-        shape: fishEye01,
-        shapeIndex: 1
-      }
-    }).to(sharkEye01, 0.7, {
-      morphSVG: {
-        shape: sharkEye02,
-        shapeIndex: 6
-      }
-    }, "+=1.5").to(fishEye01, 0.5, {
-      morphSVG: {
-        shape: fishEye02,
-        shapeIndex: 3
-      }
-    }, "+=2").to(fishEye01, 0.5, {
-      morphSVG: {
-        shape: fishEye01,
-        shapeIndex: 1
-      }
-    }).to(sharkEye01, 0.7, {
-      morphSVG: {
-        shape: sharkEye03,
-        shapeIndex: 2
-      }
-    }).to(fishEye01, 0.5, {
-      morphSVG: {
-        shape: fishEye02,
-        shapeIndex: 3
-      }
-    }, "+=2").to(fishEye01, 0.5, {
-      morphSVG: {
-        shape: fishEye01,
-        shapeIndex: 1
-      }
-    }).to(fishEye01, 0.5, {
-      morphSVG: {
-        shape: fishEye02,
-        shapeIndex: 3
-      }
-    }, "+=1").to(fishEye01, 0.5, {
-      morphSVG: {
-        shape: fishEye01,
-        shapeIndex: 1
-      }
-    }).to(sharkEye01, 0.7, {
-      morphSVG: {
-        shape: sharkEye04,
-        shapeIndex: 0
-      }
-    }).to(fishEye01, 0.5, {
-      morphSVG: {
-        shape: fishEye02,
-        shapeIndex: 3
-      }
-    }, "+=2").to(fishEye01, 0.5, {
-      morphSVG: {
-        shape: fishEye01,
-        shapeIndex: 1
-      }
-    }).to(sharkEye01, 0.7, {
-      morphSVG: {
-        shape: sharkEye05,
-        shapeIndex: -4
-      }
-    });
-    //shark eats fish
-    tllogoTile.to(fishEye01, 0.5, {
-      morphSVG: {
-        shape: fishEye03,
-        shapeIndex: 11
-      }
-    }, "+=1", "fishDead").to(sharkOutline01, 0.3, {
-        morphSVG: {
-          shape: sharkOutline02,
-          shapeIndex: 8
-        }
-      },
-      "fishDead").to(fishEye01, 0.5, {
-      css: {
-        opacity: "0"
-      }
-    }, "+=1").to(sharkEye01, 0.5, {
-      css: {
-        opacity: "0"
-      }
-    }, "+=1").to(sharkOutline01, 1.5, {
-      morphSVG: {
-        shape: sharkOutline03,
-        shapeIndex: 1
-      }
-    }, "sOutline03").to(sharkWater01, 1.5, {
-        morphSVG: {
-          shape: sharkWater03,
-          shapeIndex: "1"
-        }
-      },
-      "sOutline03").to(sharkOutline01, 1.5, {
-      morphSVG: {
-        shape: sharkOutline04,
-        shapeIndex: 0
-      }
-    }, "sOutline04").to(sharkWater01, 1.5, {
-      morphSVG: {
-        shape: sharkWater04,
-        shapeIndex: 0
-      }
-    }, "sOutline04").to(sharkOutline01, 1.5, {
-      morphSVG: {
-        shape: sharkOutline03,
-        shapeIndex: 0
-      }
-    }, "sOutlineS5").to(sharkWater01, 1.5, {
-      morphSVG: {
-        shape: sharkWater03,
-        shapeIndex: 0
-      }
-    }, "sOutlineS5");
-
-    tllogoTile.to(sharkOutline01, 0.7, {
-      morphSVG: {
-        shape: sharkOutline01,
-        shapeIndex: 0,
-        ease: CustomEase.create("custom", "M0,0,C0.342,0.03,0.432,0.484,0.444,0.804,0.444,1.026,0.818,1,1,1")
-      }
-    }, "sOutlineS6").to(sharkWater01, 0.1, {
-      morphSVG: {
-        shape: sharkWater01,
-        shapeIndex: 2,
-        ease: CustomEase.create("custom", "M0,0,C0,0.41,0.012,0.96,0.052,0.97,0.28,0.99,0.818,1,1,1")
-      }
-    }, "sOutlineS6").to(fishEye01, 0, {
-      morphSVG: {
-        shape: fishEye01,
-        shapeIndex: 3
-      }
-    }).to(sharkEye01, 0, {
-      morphSVG: {
-        shape: sharkEye01,
-        shapeIndex: 3
-      }
-    }).to(fishEye01, 0.5, {
-      css: {
-        opacity: "1"
-      }
-    }, "+=1", "initEye").to(sharkEye01, 0.5, {
-      css: {
-        opacity: "1"
-      }
-    }, "initEye");
-  }
-
 
   //******Page 1 animations***************************************
-
-
 
 
 
@@ -1847,9 +1576,5 @@ window.onload = function() {
 
 
 
-
-
-  headerAppear();
-  logoAnimation();
   pageLoader(p1TilesInput);
 };

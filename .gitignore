@@ -1,3 +1,7 @@
 # Affinity Designer files #
 ###########################
 *.afdesign
+
+# Atom.io related files #
+#########################
+.remote-sync.json

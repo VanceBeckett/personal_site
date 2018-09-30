@@ -20,7 +20,7 @@
  * explicitly restricted from using the Licensed Webfonts(s).
  *
  * You may obtain a valid license at the URLs below.
- * 
+ *
  * Webfont: FranklinGothicURW-Hea by URW
  * URL: https://www.myfonts.com/fonts/urw/franklin-gothic/t-heavy/
  * Copyright: Copyright 2010 URW++ Design &amp; Development Hamburg
@@ -38,51 +38,43 @@
 
 <body>
 
-	<div class="pageLayout" style="opacity:0">
-
 		<header>
-			<object class="comicTiles" id="logoTile" type="image/svg+xml" data="tiles/logoTile.svg" onerror="this.src='images/logoTile.png'"></object>
 
-			<nav class="tiles" id="tocTile">
-				<div id="tocContent">
-					<h3 class="tocAllignR">Table of Contents</h3>
-					<svg id="tocDevider"> <line x1="0" y1="0" x2="0" y2="230" style="stroke:rgb(0,0,0); stroke-width:8"/></svg>
-					<svg id="tocSectionHighlight"> <line id="tocHighliterLine" x1="0" y1="0" x2="210" stroke="hsl(196,75%,75%)" stroke-width="8" /></svg>
-					<ol class="tocAllignR">
+			<nav class="tiles" id="navTile">
+					<ol id="navLayout">
 						<li>
-							<pre class="tocCat" id="toc1">Introduction       01</pre>
+							<a class="navButtons" id="toc1">Introduction</a>
 						</li>
 						<li>
-							<pre class="tocCat" id="toc2c">Some of my work       02</pre>
-							<ol>
-								<li>
-									<pre class="tocSubCat" id="toc2">Web &amp; logos             </pre>
-								</li>
-								<li>
-									<pre class="tocSubCat" id="toc3">Illustrations             </pre>
-								</li>
-							</ol>
+							<a class="navButtons" id="toc2">Work</a>
 						</li>
 						<li>
-							<pre class="tocCat" id="toc4">Contact info       03</pre>
+							<a class="navButtons" id="toc3">(B)log</a>
+						</li>
+						<li>
+							<a class="navButtons" id="toc4">Contact info</a>
 						</li>
 					</ol>
-				</div>
+					<svg id="tocSectionHighlight"> <line id="tocHighliterLine" x1="0" y1="0" x2="200" stroke="hsl(196,75%,75%)" stroke-width="8" /></svg>
 			</nav>
+
 		</header>
 
 
-		<div class="tileGridContainer" id="contentLayout">
-		</div>
-	</div>
+		<main class="tileGridContainer" id="contentLayout">
+		</main>
 
 	<script type="text/javascript" src="libs/packery.pkgd.min.js"></script>
+<!--
 	<script type="text/javascript" src="libs/draggabilly.pkgd.min.js"></script>
+-->
 	<script type="text/javascript" src="libs/TweenMax.min.js"></script>
 	<script type="text/javascript" src="libs/TimelineMax.min.js"></script>
 	<script type="text/javascript" src="libs/MorphSVGPlugin.min.js"></script>
 	<script type="text/javascript" src="libs/CustomEase.min.js"></script>
+<!--
 	<script type="text/javascript" src="libs/ScrollMagic.min.js"></script>
+-->
 	<script type="text/javascript" src="main.js"></script>
 	<link rel="shortcut icon" href="favicon.ico">
 </body>
