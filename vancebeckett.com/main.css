@@ -168,30 +168,38 @@ p {
 /*******************
 **     Pages      **
 *******************/
+
+
 .p1Content, .p2Content {
   display: none;
   opacity: 0;
+	padding:40px;
 }
-
+/*
 #p1ComicTile {
-  height: 527px;
-  width: 636px;
+  height: 503px;
+  width: 605px;
+  opacity: 0;
 }
 
 #p1WelcomeTile {
   height: 480px;
   width: 380px;
+  opacity: 0;
 }
 
 #p1PromiseTile {
   height: 265px;
   width: 636px;
+  opacity: 0;
 }
 
 #p1Doggie {
   height: 430px;
   width: 347px;
+  opacity: 0;
 }
+*/
 
 /* Promise article tile */
 /* Doggie warning */

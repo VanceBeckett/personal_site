@@ -9,23 +9,16 @@ var previousAnim;
 
 var p1AnimStarted = false;
 
+
 window.onload = function() {
-
-
-  //Draggable tiles
-  /*
-  p1pckry.getItemElements().forEach(function (itemElem) {
-      var draggie = new Draggabilly(itemElem);
-      p1pckry.bindDraggabillyEvents(draggie);
-  });
-  */
-
 
   /*
     var tlp2C = new TimelineMax({
       delay: 0, //First animation in the timeline would have a glitched start on chrome without this
     });
   */
+
+
 
 
   //****** Variables *******//
@@ -36,91 +29,26 @@ window.onload = function() {
   var tl = new TimelineMax();
 
   //Page1 animation
-  var tlp1C = new TimelineMax({
-    delay: 0
-  });
+  var tlp1C = new TimelineMax({delay: 0});
   //Page1 loop animation
-  var tlp1CSt = new TimelineMax({
-    delay: 0,
-    repeat: -1,
-    repeatDelay: -0.4
-  });
+  var tlp1CSt = new TimelineMax({delay: 0, repeat: -1, repeatDelay: -0.4});
 
   //Page2 animation
-  var tlp2C = new TimelineMax({
-    delay: 0
-  });
-  var tlp2CWind = new TimelineMax({
-    delay: 0,
-    repeat: -1,
-    repeatDelay: 0.2
-  });
-  var tlp2cStar1 = new TimelineMax({
-    delay: 0,
-    repeat: -1,
-    repeatDelay: 1.2
-  });
-  var tlp2cStar2 = new TimelineMax({
-    delay: 0.5,
-    repeat: -1,
-    repeatDelay: 1.2
-  });
-  var tlp2cStar3 = new TimelineMax({
-    delay: 0.3,
-    repeat: -1,
-    repeatDelay: 1.2
-  });
-  var tlp2cStar4 = new TimelineMax({
-    delay: 1,
-    repeat: -1,
-    repeatDelay: 1.2
-  });
-  var tlp2cStar5 = new TimelineMax({
-    delay: 1.5,
-    repeat: -1,
-    repeatDelay: 1.2
-  });
-  var tlp2cStar6 = new TimelineMax({
-    delay: 0.7,
-    repeat: -1,
-    repeatDelay: 1.2
-  });
-  var tlp2cStar7 = new TimelineMax({
-    delay: 1.8,
-    repeat: -1,
-    repeatDelay: 1.2
-  });
-  var tlp2cStar8 = new TimelineMax({
-    delay: 0.4,
-    repeat: -1,
-    repeatDelay: 1.2
-  });
-  var tlp2cStar9 = new TimelineMax({
-    delay: 2,
-    repeat: -1,
-    repeatDelay: 1.2
-  });
-  var tlp2cStar10 = new TimelineMax({
-    delay: 1.2,
-    repeat: -1,
-    repeatDelay: 1.2
-  });
-  var tlp2cStar11 = new TimelineMax({
-    delay: 0.7,
-    repeat: -1,
-    repeatDelay: 1.2
-  });
-
-
-
-
-
-
-
+  var tlp2C = new TimelineMax({delay: 0});
+  var tlp2CWind = new TimelineMax({delay: 0, repeat: -1, repeatDelay: 0.2});
+  var tlp2cStar1 = new TimelineMax({delay: 0, repeat: -1, repeatDelay: 1.2});
+  var tlp2cStar2 = new TimelineMax({delay: 0.5, repeat: -1, repeatDelay: 1.2});
+  var tlp2cStar3 = new TimelineMax({delay: 0.3, repeat: -1, repeatDelay: 1.2});
+  var tlp2cStar4 = new TimelineMax({delay: 1, repeat: -1, repeatDelay: 1.2});
+  var tlp2cStar5 = new TimelineMax({delay: 1.5, repeat: -1, repeatDelay: 1.2});
+  var tlp2cStar6 = new TimelineMax({delay: 0.7, repeat: -1, repeatDelay: 1.2});
+  var tlp2cStar7 = new TimelineMax({delay: 1.8, repeat: -1, repeatDelay: 1.2});
+  var tlp2cStar8 = new TimelineMax({delay: 0.4, repeat: -1, repeatDelay: 1.2});
+  var tlp2cStar9 = new TimelineMax({delay: 2, repeat: -1, repeatDelay: 1.2});
+  var tlp2cStar10 = new TimelineMax({delay: 1.2, repeat: -1, repeatDelay: 1.2});
+  var tlp2cStar11 = new TimelineMax({delay: 0.7, repeat: -1, repeatDelay: 1.2});
 
   //Page 1 animations
-
-
 
   //***Elements***//
 
@@ -131,7 +59,6 @@ window.onload = function() {
   var navTile = document.getElementById("navTile"),
     tocHighliterLine = document.getElementById("tocHighliterLine"),
     tocSectionHighlight = document.getElementById("tocSectionHighlight");
-
 
   //Table of content button click event
   var navButton1 = document.getElementById("toc1");
@@ -165,75 +92,200 @@ window.onload = function() {
     }, false);
   }
 
-
-
-
-
   var p1ComicTileInput = [
-      ["class", "comicTiles p1Content", "id", "p1ComicTile", "type", "image/svg+xml", "data", "tiles/p1/p1Comic.svg", "style", "display:none;width:636px;height:527px;opacity:0;", "alt", "Beginning of a comics. Page 1 shows the comet (which represents a bussiness that has difficulsties with its branding) falling from the sky. Main characters - The Man and wolf Wewawet observe the comet, thinking if they can help."], "tiles/p1/p1Comic.svg"
+      [
+        "class",
+        "comicTiles p1Content",
+        "id",
+        "p1ComicTile",
+        "type",
+        "image/svg+xml",
+        "data",
+        "tiles/p1/p1Comic.svg",
+        "style",
+        "display:none;width:605px;height:503px;opacity:0;box-shadow: -12.5px 12.5px hsla(0, 0%, 0%, 0.5)",
+        "alt",
+        "Beginning of a comics. Page 1 shows the comet (which represents a bussiness that has difficulsties with its branding) falling from the sky. Main characters - The Man and wolf Wewawet observe the comet, thinking if they can help."
+      ],
+      "tiles/p1/p1Comic.svg"
     ],
     p1WelcomeTileInput = [
-      ["class", "tiles p1Content", "id", "p1WelcomeTile", "type", "text/html", "data", "tiles/p1/p1WelcomeTile.html", "style", "display:none;width:380px;height:480px;opacity:0;"], "tiles/p1/p1WelcomeTile.html"
+      [
+        "class",
+        "tiles p1Content",
+        "id",
+        "p1WelcomeTile",
+        "type",
+        "text/html",
+        "data",
+        "tiles/p1/p1WelcomeTile.html",
+        "style",
+        "display:none;width:380px;height:480px;opacity:0;box-shadow: -12.5px 12.5px hsla(0, 0%, 0%, 0.5)"
+      ],
+      "tiles/p1/p1WelcomeTile.html"
     ],
     p1PromiseTileInput = [
-      ["class", "tiles p1Content", "id", "p1PromiseTile", "type", "text/html", "data", "tiles/p1/p1PromiseTile.html", "style", "display:none;width:636px;height:265px;opacity:0;"], "tiles/p1/p1PromiseTile.html"
+      [
+        "class",
+        "tiles p1Content",
+        "id",
+        "p1PromiseTile",
+        "type",
+        "text/html",
+        "data",
+        "tiles/p1/p1PromiseTile.html",
+        "style",
+        "display:none;width:636px;height:265px;opacity:0;box-shadow: -12.5px 12.5px hsla(0, 0%, 0%, 0.5)"
+      ],
+      "tiles/p1/p1PromiseTile.html"
     ],
     p1DoggieTileInput = [
-      ["class", "comicTiles p1Content", "id", "p1Doggie", "type", "image/svg+xml", "data", "tiles/p1/p1Doggie.svg", "style", "display:none;width:347px;height:430px;opacity:0;", "alt", "Wepwawet says that peoples tell the next page may be too colorful for you (each page has its own color scheme)."], "tiles/p1/p1Doggie.svg"
+      [
+        "class",
+        "comicTiles p1Content",
+        "id",
+        "p1Doggie",
+        "type",
+        "image/svg+xml",
+        "data",
+        "tiles/p1/p1Doggie.svg",
+        "style",
+        "display:none;width:347px;height:430px;opacity:0;box-shadow: -12.5px 12.5px hsla(0, 0%, 0%, 0.5)",
+        "alt",
+        "Wepwawet says that peoples tell the next page may be too colorful for you (each page has its own color scheme)."
+      ],
+      "tiles/p1/p1Doggie.svg"
     ];
-
-
 
   var p2ComicTileInput = [
-      ["class", "comicTiles p2Content", "id", "p2ComicTile", "type", "image/svg+xml", "data", "tiles/p2/p2Comic.svg", "style", "display:none;width:782px;height:442px;opacity:0;", "alt", "Page 2 of the comic shows our characters at the mountain thinking what is wrong with the &quot;business&quot; just before they went to help."], "tiles/p2/p2Comic.svg"
+      [
+        "class",
+        "comicTiles p2Content",
+        "id",
+        "p2ComicTile",
+        "type",
+        "image/svg+xml",
+        "data",
+        "tiles/p2/p2Comic.svg",
+        "style",
+        "display:none;width:782px;height:442px;opacity:0;box-shadow: -12.5px 12.5px hsla(0, 0%, 0%, 0.5)",
+        "alt",
+        "Page 2 of the comic shows our characters at the mountain thinking what is wrong with the &quot;business&quot; just before they went to help."
+      ],
+      "tiles/p2/p2Comic.svg"
     ],
     p2Tile1Input = [
-      ["class", "comicTiles p2Content", "id", "p2Tile1", "type", "image/svg+xml", "data", "tiles/p2/content/p2Tile1.svg", "style", "display:none;width:710px;height:330px;opacity:0;", "alt", "Temporary dummy. This one will be in HTML soon"], "tiles/p2/content/p2Tile1.svg"
+      [
+        "class",
+        "comicTiles p2Content",
+        "id",
+        "p2Tile1",
+        "type",
+        "image/svg+xml",
+        "data",
+        "tiles/p2/content/p2Tile1.svg",
+        "style",
+        "display:none;width:710px;height:330px;opacity:0;box-shadow: -12.5px 12.5px hsla(0, 0%, 0%, 0.5)",
+        "alt",
+        "Temporary dummy. This one will be in HTML soon"
+      ],
+      "tiles/p2/content/p2Tile1.svg"
     ],
     p2Tile2Input = [
-      ["class", "comicTiles p2Content", "id", "p2Tile2", "type", "image/svg+xml", "data", "tiles/p2/content/p2Tile2.svg", "style", "display:none;width:430px;height:572px;opacity:0;", "alt", "Temporary dummy. This one will be in HTML soon"], "tiles/p2/content/p2Tile2.svg"
+      [
+        "class",
+        "comicTiles p2Content",
+        "id",
+        "p2Tile2",
+        "type",
+        "image/svg+xml",
+        "data",
+        "tiles/p2/content/p2Tile2.svg",
+        "style",
+        "display:none;width:430px;height:572px;opacity:0;box-shadow: -12.5px 12.5px hsla(0, 0%, 0%, 0.5)",
+        "alt",
+        "Temporary dummy. This one will be in HTML soon"
+      ],
+      "tiles/p2/content/p2Tile2.svg"
     ],
     p2Tile3Input = [
-      ["class", "comicTiles p2Content", "id", "p2Tile3", "type", "image/svg+xml", "data", "tiles/p2/content/p2Tile3.svg", "style", "display:none;width:710px;height:330px;opacity:0;", "alt", "Temporary dummy. This one will be in HTML soon"], "tiles/p2/content/p2Tile3.svg"
+      [
+        "class",
+        "comicTiles p2Content",
+        "id",
+        "p2Tile3",
+        "type",
+        "image/svg+xml",
+        "data",
+        "tiles/p2/content/p2Tile3.svg",
+        "style",
+        "display:none;width:710px;height:330px;opacity:0;box-shadow: -12.5px 12.5px hsla(0, 0%, 0%, 0.5)",
+        "alt",
+        "Temporary dummy. This one will be in HTML soon"
+      ],
+      "tiles/p2/content/p2Tile3.svg"
     ];
-
-
-
-
 
   var redColor = "hsl(0, 75%, 70%)",
     blackColor = "hsl(0, 75%, 0%)";
 
   var p1TilesInput = {
     pNumber: 1,
-    pTiles: [p1ComicTileInput, p1WelcomeTileInput, p1PromiseTileInput, p1DoggieTileInput],
-    pTilesObjects: [0, 0, 0, 0],
-    pTilesIDs: [0, 0, 0, 0],
+    pTiles: [
+      p1ComicTileInput, p1WelcomeTileInput, p1PromiseTileInput, p1DoggieTileInput
+    ],
+    pTilesObjects: [
+      0, 0, 0, 0
+    ],
+    pTilesIDs: [
+      0, 0, 0, 0
+    ],
     classSelector: ".p1Content",
     bkgColor: "hsl(196, 75%, 75%)",
     strongColor: "hsl(196, 25%, 38%)",
     weakColor: "hsl(196, 75%, 75%)",
     tocHighliterPosition: "85px",
-    timeline: [tlp1C, tlp1CSt],
+    timeline: [
+      tlp1C, tlp1CSt
+    ],
     animation: p1Animation,
     initAnimation: true
   };
+
   var p2TilesInput = {
     pNumber: 2,
-    pTiles: [p2ComicTileInput, p2Tile1Input, p2Tile2Input, p2Tile3Input],
-    pTilesObjects: [0, 0, 0, 0],
-    pTilesIDs: [0, 0, 0, 0],
+    pTiles: [
+      p2ComicTileInput, p2Tile1Input, p2Tile2Input, p2Tile3Input
+    ],
+    pTilesObjects: [
+      0, 0, 0, 0
+    ],
+    pTilesIDs: [
+      0, 0, 0, 0
+    ],
     classSelector: ".p2Content",
     bkgColor: "hsl(318, 75%, 75%)",
     strongColor: "hsl(318, 25%, 38%)",
     weakColor: "hsl(318, 75%, 75%)",
     tocHighliterPosition: "320px",
-    timeline: [tlp2C, tlp2CWind, tlp2cStar1, tlp2cStar2, tlp2cStar3, tlp2cStar4, tlp2cStar5, tlp2cStar6, tlp2cStar7, tlp2cStar8, tlp2cStar9, tlp2cStar10, tlp2cStar11],
+    timeline: [
+      tlp2C,
+      tlp2CWind,
+      tlp2cStar1,
+      tlp2cStar2,
+      tlp2cStar3,
+      tlp2cStar4,
+      tlp2cStar5,
+      tlp2cStar6,
+      tlp2cStar7,
+      tlp2cStar8,
+      tlp2cStar9,
+      tlp2cStar10,
+      tlp2cStar11
+    ],
     animation: p2Animation,
     initAnimation: true
   };
-
-
 
 
 
@@ -253,18 +305,24 @@ window.onload = function() {
         (function(i) {
           xhr.onreadystatechange = function() {
             if (this.readyState == 4 && this.status == 200) {
-              var pageObj = document.createElement("object");
-              for (var k = 0; k < pTilesInput.pTiles[i][0].length; k += 2) {
-                pageObj.setAttribute(pTilesInput.pTiles[i][0][k], pTilesInput.pTiles[i][0][k + 1]);
-                pageObj.style.cssText = pTilesInput.pTiles[i][0][9];
-              }
-              pTilesInput.pTilesObjects.splice(i, 1, pageObj);
               loadState += 1;
               if (loadState == pTilesInput.pTiles.length) {
                 for (var j = 0; j < pTilesInput.pTilesObjects.length; j++) {
-                  contentLayout.appendChild(pTilesInput.pTilesObjects[j]);
+                  var pageObj = document.createElement("object");
+                  pTilesInput.pTilesObjects.splice(j, 1, pageObj);
+                  var appendedObj = contentLayout.appendChild(pTilesInput.pTilesObjects[j]);
+                  appendedObj.class = pTilesInput.pTiles[j][0][1];
+                  appendedObj.id = pTilesInput.pTiles[j][0][3];
+                  appendedObj.type = pTilesInput.pTiles[j][0][5];
+                  appendedObj.data = pTilesInput.pTiles[j][0][7];
+                  appendedObj.style.cssText = pTilesInput.pTiles[j][0][9];
+                  if (pTilesInput.pTiles[j][0][11] !== undefined) {
+                    appendedObj.alt = pTilesInput.pTiles[j][0][11];
+                  }
+
                   pTilesInput.pTilesIDs.splice(j, 1, document.getElementById(pTilesInput.pTiles[j][0][3]));
-                  pTilesInput.pTilesIDs[j].style.cssText = pTilesInput.pTiles[j][0][9];
+                  console.log(pTilesInput.pTiles[j][0][3]);
+                  console.log(pTilesInput.pTiles[j][0][9]);
                 }
                 pageFlip(pTilesInput);
               }
@@ -277,8 +335,6 @@ window.onload = function() {
     }
   }
 
-
-
   //Animation termination function
   function terminateTL(timeline) {
     if (previousAnim != undefined) {
@@ -288,7 +344,6 @@ window.onload = function() {
     }
     previousAnim = timeline;
   }
-
 
   //Random
   function randomNumber(max, min) {
@@ -320,7 +375,19 @@ window.onload = function() {
     }
   }
 
-  var randomRotationReturn = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+  var randomRotationReturn = [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+  ];
 
   function randomRotation(max, min, starnumber) {
     var rnd = randomNumber(max, min);
@@ -328,68 +395,9 @@ window.onload = function() {
     return "rotate(" + rnd + "deg)";
   }
 
-
   function randomScale(max, min) {
     return "scale(" + randomPositive(max, min) + ")";
   }
-
-
-
-  //
-  /*
-    //Emitter!
-
-    function Emitter() {
-      this.events = {};
-    }
-
-    Emitter.prototype.on = function(type, listener) {
-      this.events[type] = this.events[type] || [];
-      this.events[type].push(listener);
-    };
-
-    Emitter.prototype.emit = function(type) {
-      if (this.events[type]) {
-        this.events[type].forEach(function(listener) {
-          listener();
-        });
-      }
-    };
-  */
-
-
-
-  /*
-    var onPageFlip = new Emitter();
-    onPageFlip.on('flipped', function() {
-      console.log("thing that will happen");
-    });
-    onPageFlip.on('flipped', function() {
-      console.log("another thing happens");
-    });
-
-
-    //  onPageFlip.emit('flipped'); //this is the trigger
-
-  */
-
-
-
-  /* ScrollMagic
-  var pageChange = new ScrollMagic.Controller();
-  var pageChangeScene = new ScrollMagic.Scene({
-  	offset: calcPageHeight() + 200,
-  }).on("start", pageContentChangeForward()).addTo(pageChange);
-
-  function calcPageHeight() {
-  	var body = document.body,
-  		html = document.documentElement;
-  	var pageHeight = Math.max(body.scrollHeight, body.offsetHeight,
-  		html.clientHeight, html.scrollHeight, html.offsetHeight);
-  	return pageHeight
-  }
-
-  */
 
   //**Animations**//
   function tileAppear(tile, dir, path) {
@@ -399,7 +407,7 @@ window.onload = function() {
     }
     if (dir === "ltr") {
       tl.fromTo(tile, 0.9, {
-        x: -path,
+        x: -path
       }, {
         x: 0,
         ease: Power3.easeOut
@@ -411,7 +419,7 @@ window.onload = function() {
       }, "-=0.9");
     } else {
       tl.fromTo(tile, 0.9, {
-        y: path,
+        y: path
       }, {
         y: 0,
         ease: Power3.easeOut
@@ -437,11 +445,8 @@ window.onload = function() {
         opacity: "0",
         ease: Power3.easeOut
       }
-    }, "-=0.7").set(tile, {
-      display: "none",
-    });
+    }, "-=0.7").set(tile, {display: "none"});
   }
-
 
   function pageFlip(toPage) {
     if (toPage.pNumber !== currentPage && flippingPage !== true) {
@@ -467,7 +472,7 @@ window.onload = function() {
       currentPage = toPage.pNumber;
 
       for (var i = 0; i < toPage.pTilesIDs.length; i++) {
-        toPage.pTilesIDs[i].setAttribute("style", "display:block");
+        toPage.pTilesIDs[i].style.display="block";
       }
 
       function packeryLayout() {
@@ -481,6 +486,7 @@ window.onload = function() {
           }
         }
       }
+
 
       var tl = new TimelineMax();
       var disappOffset;
@@ -514,11 +520,9 @@ window.onload = function() {
         toPage.timeline[0].play();
         toPage.animation();
       }
-
       tl.call(packeryLayout, [], this, appearOffset).call(pageContentAppear, [toPage.pTilesIDs], this, appearOffset).call(terminateTL, [toPage.timeline], this, disappOffset).call(animate).call(flipped, [], flipDuration);
     }
   }
-
 
   function pageContentDisappear(pageTiles) {
     var tl = new TimelineMax();
@@ -536,10 +540,7 @@ window.onload = function() {
     }
   }
 
-
   //******Page 1 animations***************************************
-
-
 
   function p1Animation() {
     //Page 1 Tiles
@@ -590,18 +591,14 @@ window.onload = function() {
     var p1cCometTail = p1ComicSVGid("p1cCometTail"),
       p1cCometTailPath = p1ComicSVGid("p1cCometTailPath"),
       p1cCometComet = p1ComicSVGid("p1cCometComet"),
-      p1cCometTailMotionPath = MorphSVGPlugin.pathDataToBezier(p1cCometTailPath, {
-        align: p1cCometComet
-      });
+      p1cCometTailMotionPath = MorphSVGPlugin.pathDataToBezier(p1cCometTailPath, {align: p1cCometComet});
     tlp1C.set(p1cCometComet, {
       xPercent: -50,
       yPercent: -50
     });
 
     var p1cCometTailHider = p1ComicSVGid("p1cCometTailHider");
-    MorphSVGPlugin.pathDataToBezier(p1cCometTailPath, {
-      align: p1cCometTailHider
-    });
+    MorphSVGPlugin.pathDataToBezier(p1cCometTailPath, {align: p1cCometTailHider});
     tlp1C.set(p1cCometTailHider, {
       xPercent: -85,
       yPercent: 0
@@ -651,16 +648,10 @@ window.onload = function() {
       p1cWChatIco3 = p1DoggieSVGid("p1cWChatIco3"),
       p1cWChatBox2m = p1DoggieSVGid("p1cWChatBox2m");
 
-
-
     console.log("page 1 anim started");
     //Animation
 
-
     ///
-
-
-
 
     if (p1AnimStarted === true) {
       //      tlp1C.seek(10);
@@ -695,7 +686,6 @@ window.onload = function() {
     }, "+=0.2").to(p1cCloud01, 9, {
       x: 20
     }, "creditsStart");
-
 
     //Scale down
     tlp1C.to(p1cBackground, 5, {
@@ -769,11 +759,15 @@ window.onload = function() {
         shape: p1cDogeEye01,
         shapeIndex: 1
       }
-    }, "scaleStart+=2.6").to([p1cChatBox1, p1cChatIco1], 1, {
-      x: +50,
-      y: +50,
+    }, "scaleStart+=2.6").to([
+      p1cChatBox1, p1cChatIco1
+    ], 1, {
+      x: + 50,
+      y: + 50,
       opacity: 1
-    }, "scaleStart+=1.5").from([p1cCometComet, p1cCometTailHider], 15, {
+    }, "scaleStart+=1.5").from([
+      p1cCometComet, p1cCometTailHider
+    ], 15, {
       bezier: {
         values: p1cCometTailMotionPath,
         type: "cubic"
@@ -781,9 +775,9 @@ window.onload = function() {
       ease: Power3.easeOut
     }, "scaleStart-=2");
 
-
-
-    tlp1C.to([redWindow, redWindowStroke, redWindowClip], 1.5, {
+    tlp1C.to([
+      redWindow, redWindowStroke, redWindowClip
+    ], 1.5, {
       x: 500,
       ease: Power3.easeOut
     }, "windowSlide-=9").to(whiteBlink, 0.4, {
@@ -837,30 +831,37 @@ window.onload = function() {
       }
     }, "windowSlide-=7.4").call(p1CStandardAnimation, [], this, "-=4.7");
 
-
-    tlp1C.to([p1cChatBox2, p1cChatIco2], 1, {
+    tlp1C.to([
+      p1cChatBox2, p1cChatIco2
+    ], 1, {
       x: -50,
-      y: +50,
+      y: + 50,
       opacity: 1
-    }, "windowSlide-=6").to([p1cChatBox3, p1cChatIco3], 1, {
+    }, "windowSlide-=6").to([
+      p1cChatBox3, p1cChatIco3
+    ], 1, {
       x: -30,
-      y: +50,
+      y: + 50,
       opacity: 1
-    }, "windowSlide-=3").to([p1cWChatBox1, p1cWChatIco1], 1, {
+    }, "windowSlide-=3").to([
+      p1cWChatBox1, p1cWChatIco1
+    ], 1, {
       x: -30,
-      y: +50,
+      y: + 50,
       opacity: 1
-    }, "windowSlide").to([p1cWChatBox2, p1cWChatIco2, p1cWChatBox2m], 1, {
-      x: +30,
-      y: +50,
+    }, "windowSlide").to([
+      p1cWChatBox2, p1cWChatIco2, p1cWChatBox2m
+    ], 1, {
+      x: + 30,
+      y: + 50,
       opacity: 1
-    }, "windowSlide+=0.2").to([p1cWChatBox3, p1cWChatIco3], 1, {
+    }, "windowSlide+=0.2").to([
+      p1cWChatBox3, p1cWChatIco3
+    ], 1, {
       x: -30,
-      y: +50,
+      y: + 50,
       opacity: 1
     }, "windowSlide+=0.4");
-
-
 
     function p1CStandardAnimation() {
 
@@ -978,7 +979,7 @@ window.onload = function() {
       p2cOwl04abeak = p2ComicSVGid("p2cOwl04abeak"),
       p2cOwl04alDarkWing02 = p2ComicSVGid("p2cOwl04alDarkWing02"),
       p2cOwl04arDarkWing02 = p2ComicSVGid("p2cOwl04arDarkWing02"),
-      p2cOwl04aWBodyClip = p2ComicSVGid("p2cOwl04aWBodyClip"), //Owl body new clip path      //end of copy
+      p2cOwl04aWBodyClip = p2ComicSVGid("p2cOwl04aWBodyClip"), //Owl body new clip path      end of copy
       p2cOwl05rDarkWing01 = p2ComicSVGid("p2cOwl05rDarkWing01"),
       p2cOwl05lDarkWing01 = p2ComicSVGid("p2cOwl05lDarkWing01"),
       p2cOwl05WBody = p2ComicSVGid("p2cOwl05WBody"),
@@ -998,9 +999,7 @@ window.onload = function() {
       p2cOwl07beak = p2ComicSVGid("p2cOwl07beak"), //next
       p2cOwl08WBody = p2ComicSVGid("p2cOwl08WBody"),
       p2cOwlMP = p2ComicSVGid("p2cOwlMP"),
-      p2cOwlAnimPath = MorphSVGPlugin.pathDataToBezier(p2cOwlMP, {
-        align: "relative"
-      });
+      p2cOwlAnimPath = MorphSVGPlugin.pathDataToBezier(p2cOwlMP, {align: "relative"});
 
     //TODO align to an svg object
     // var path = MorphSVGPlugin.pathDataToBezier(".path",{offsetX:-10,offsetY:-10});
@@ -1010,8 +1009,6 @@ window.onload = function() {
       align: p2cOwl04a
     });
     */
-
-
 
     //Chat
     var p2cChatBox1 = p2ComicSVGid("p2cChatBox1"),
@@ -1069,7 +1066,6 @@ window.onload = function() {
 
     //          "-ms-transform": others,
 
-
     function starAnimFrom(star, number) {
       var rnd = randomRotationReturn[number];
       var webkit = "rotate(" + rnd + "deg) scale(1)";
@@ -1086,20 +1082,62 @@ window.onload = function() {
     //          "-ms-transform": others,
 
     function p2CStarsLoop() {
-      tlp2cStar1.play().call(starAnimTo, [p2cStar1g, 0], this, "start").call(starAnimFrom, [p2cStar1g, 0], this, "start+=1.2");
-      tlp2cStar2.play().call(starAnimTo, [p2cStar2g, 1], this, "start").call(starAnimFrom, [p2cStar2g, 1], this, "start+=1.2");
-      tlp2cStar3.play().call(starAnimTo, [p2cStar3g, 2], this, "start").call(starAnimFrom, [p2cStar3g, 2], this, "start+=1.2");
-      tlp2cStar4.play().call(starAnimTo, [p2cStar4g, 3], this, "start").call(starAnimFrom, [p2cStar4g, 3], this, "start+=1.2");
-      tlp2cStar5.play().call(starAnimTo, [p2cStar5g, 4], this, "start").call(starAnimFrom, [p2cStar5g, 4], this, "start+=1.2");
-      tlp2cStar6.play().call(starAnimTo, [p2cStar6g, 5], this, "start").call(starAnimFrom, [p2cStar6g, 5], this, "start+=1.2");
-      tlp2cStar7.play().call(starAnimTo, [p2cStar7g, 6], this, "start").call(starAnimFrom, [p2cStar7g, 6], this, "start+=1.2");
-      tlp2cStar8.play().call(starAnimTo, [p2cStar8g, 7], this, "start").call(starAnimFrom, [p2cStar8g, 7], this, "start+=1.2");
-      tlp2cStar9.play().call(starAnimTo, [p2cStar9g, 8], this, "start").call(starAnimFrom, [p2cStar9g, 8], this, "start+=1.2");
-      tlp2cStar10.play().call(starAnimTo, [p2cStar10g, 9], this, "start").call(starAnimFrom, [p2cStar10g, 9], this, "start+=1.2");
-      tlp2cStar11.play().call(starAnimTo, [p2cStar11g, 10], this, "start").call(starAnimFrom, [p2cStar11g, 10], this, "start+=1.2");
+      tlp2cStar1.play().call(starAnimTo, [
+        p2cStar1g, 0
+      ], this, "start").call(starAnimFrom, [
+        p2cStar1g, 0
+      ], this, "start+=1.2");
+      tlp2cStar2.play().call(starAnimTo, [
+        p2cStar2g, 1
+      ], this, "start").call(starAnimFrom, [
+        p2cStar2g, 1
+      ], this, "start+=1.2");
+      tlp2cStar3.play().call(starAnimTo, [
+        p2cStar3g, 2
+      ], this, "start").call(starAnimFrom, [
+        p2cStar3g, 2
+      ], this, "start+=1.2");
+      tlp2cStar4.play().call(starAnimTo, [
+        p2cStar4g, 3
+      ], this, "start").call(starAnimFrom, [
+        p2cStar4g, 3
+      ], this, "start+=1.2");
+      tlp2cStar5.play().call(starAnimTo, [
+        p2cStar5g, 4
+      ], this, "start").call(starAnimFrom, [
+        p2cStar5g, 4
+      ], this, "start+=1.2");
+      tlp2cStar6.play().call(starAnimTo, [
+        p2cStar6g, 5
+      ], this, "start").call(starAnimFrom, [
+        p2cStar6g, 5
+      ], this, "start+=1.2");
+      tlp2cStar7.play().call(starAnimTo, [
+        p2cStar7g, 6
+      ], this, "start").call(starAnimFrom, [
+        p2cStar7g, 6
+      ], this, "start+=1.2");
+      tlp2cStar8.play().call(starAnimTo, [
+        p2cStar8g, 7
+      ], this, "start").call(starAnimFrom, [
+        p2cStar8g, 7
+      ], this, "start+=1.2");
+      tlp2cStar9.play().call(starAnimTo, [
+        p2cStar9g, 8
+      ], this, "start").call(starAnimFrom, [
+        p2cStar9g, 8
+      ], this, "start+=1.2");
+      tlp2cStar10.play().call(starAnimTo, [
+        p2cStar10g, 9
+      ], this, "start").call(starAnimFrom, [
+        p2cStar10g, 9
+      ], this, "start+=1.2");
+      tlp2cStar11.play().call(starAnimTo, [
+        p2cStar11g, 10
+      ], this, "start").call(starAnimFrom, [
+        p2cStar11g, 10
+      ], this, "start+=1.2");
     }
-
-
 
     //blinks and wind
     tlp2C.call(p2CStarsLoop, [], this, "0").to(p2cWolf01Body, 1, {
@@ -1149,11 +1187,10 @@ window.onload = function() {
       }
     }, "animStart+=2.2");
 
-
-
-
     //owl head turn
-    tlp2C.to([p2cOwl01, path107], 1, {
+    tlp2C.to([
+      p2cOwl01, path107
+    ], 1, {
       morphSVG: {
         shape: p2cOwl02,
         shapeIndex: "0"
@@ -1179,8 +1216,6 @@ window.onload = function() {
         shapeIndex: "auto"
       }
     }, "owlHeadTurn");
-
-
 
     //wolf head turn and chat
     tlp2C.to(p2cWolf01Body, 1.2, {
@@ -1213,9 +1248,11 @@ window.onload = function() {
         shapeIndex: "auto"
       },
       ease: Power2.easeInOut
-    }, "wolfHeadTurn").call(p2CWindLoop, [], this, "wolfHeadTurn+=1.3").to([p2cChatBox1, p2cChatIco1], 1, {
+    }, "wolfHeadTurn").call(p2CWindLoop, [], this, "wolfHeadTurn+=1.3").to([
+      p2cChatBox1, p2cChatIco1
+    ], 1, {
       x: -10,
-      y: +50,
+      y: + 50,
       opacity: 1
     }).to(p2cOwl01lEye, 0.6, {
       morphSVG: {
@@ -1239,9 +1276,10 @@ window.onload = function() {
       }
     }, "blink02+=0.7");
 
-
     //owl creepy turn and chat
-    tlp2C.to([p2cOwl01, path107], 0.7, {
+    tlp2C.to([
+      p2cOwl01, path107
+    ], 0.7, {
       morphSVG: {
         shape: p2cOwl02a,
         shapeIndex: "auto"
@@ -1266,16 +1304,18 @@ window.onload = function() {
         shape: p2cOwl02aface,
         shapeIndex: "0"
       }
-    }, "owlHeadTurn2a").to([p2cChatBox2, p2cChatIco2], 1, {
-      x: +10,
-      y: +50,
+    }, "owlHeadTurn2a").to([
+      p2cChatBox2, p2cChatIco2
+    ], 1, {
+      x: + 10,
+      y: + 50,
       opacity: 1
     }, "+=1");
 
-
-
     //owl's creepy turn-return
-    tlp2C.to([p2cOwl01, path107], 0.7, {
+    tlp2C.to([
+      p2cOwl01, path107
+    ], 0.7, {
       morphSVG: {
         shape: p2cOwl02,
         shapeIndex: "auto"
@@ -1302,102 +1342,114 @@ window.onload = function() {
       }
     }, "owlHeadTurn2");
 
-
     //Owl: ready...
-    tlp2C.to([p2cOwl01, path107], 0.5, {
+    tlp2C.to([
+      p2cOwl01, path107
+    ], 0.5, {
       morphSVG: {
         shape: p2cOwl03,
-        shapeIndex: "auto",
+        shapeIndex: "auto"
       }
     }, "owlHeadTurn3").to(p2cOwl01rEye, 0.5, {
       morphSVG: {
         shape: p2cOwl03rEye,
-        shapeIndex: "auto",
+        shapeIndex: "auto"
       }
     }, "owlHeadTurn3").to(p2cOwl01lEye, 0.5, {
       morphSVG: {
         shape: p2cOwl03lEye,
-        shapeIndex: "auto",
+        shapeIndex: "auto"
       }
     }, "owlHeadTurn3").to(p2cOwl01beak, 0.5, {
       morphSVG: {
         shape: p2cOwl03beak,
-        shapeIndex: "auto",
+        shapeIndex: "auto"
       }
     }, "owlHeadTurn3").to(p2cOwl01face, 0.5, {
       morphSVG: {
         shape: p2cOwl03face,
-        shapeIndex: "0",
+        shapeIndex: "0"
       }
-    }, "owlHeadTurn3").to([p2cChatBox3, p2cChatIco3], 1, {
+    }, "owlHeadTurn3").to([
+      p2cChatBox3, p2cChatIco3
+    ], 1, {
       x: -10,
-      y: +50,
+      y: + 50,
       opacity: 1
     }, "owlHeadTurn3+=0.6");
 
-
-
     //Owl: steady...
-    tlp2C.to([p2cOwl04rDarkWing01, p2cOwl04lDarkWing01], 0.1, {
+    tlp2C.to([
+      p2cOwl04rDarkWing01, p2cOwl04lDarkWing01
+    ], 0.1, {
       css: {
         opacity: 1
       }
     }, "owlflap1-=0.8").to(p2cOwl04lDarkWing01, 0.5, {
       morphSVG: {
         shape: p2cOwl04alDarkWing02,
-        shapeIndex: "auto",
+        shapeIndex: "auto"
       }
     }, "owlflap1-=0.8").to(p2cOwl04rDarkWing01, 0.5, {
       morphSVG: {
         shape: p2cOwl04arDarkWing02,
-        shapeIndex: "auto",
+        shapeIndex: "auto"
       }
-    }, "owlflap1-=0.8").to([p2cOwl01, path107], 0.5, {
+    }, "owlflap1-=0.8").to([
+      p2cOwl01, path107
+    ], 0.5, {
       morphSVG: {
         shape: p2cOwl04aWBody,
-        shapeIndex: "-48",
-
+        shapeIndex: "-48"
       }
     }, "owlflap1-=0.8").to(p2cOwl01rEye, 0.5, {
       morphSVG: {
         shape: p2cOwl04arEye,
-        shapeIndex: "auto",
+        shapeIndex: "auto"
       }
     }, "owlflap1-=0.8").to(p2cOwl01lEye, 0.5, {
       morphSVG: {
         shape: p2cOwl04alEye,
-        shapeIndex: "auto",
+        shapeIndex: "auto"
       }
     }, "owlflap1-=0.8").to(p2cOwl01beak, 0.5, {
       morphSVG: {
         shape: p2cOwl04abeak,
-        shapeIndex: "auto",
+        shapeIndex: "auto"
       }
     }, "owlflap1-=0.8").to(p2cOwl01face, 0.5, {
       morphSVG: {
         shape: p2cOwl04aface,
-        shapeIndex: "0",
+        shapeIndex: "0"
       }
     }, "owlflap1-=0.8");
 
     //Owl: GO!!!
-    tlp2C.to([p2cOwl04aWBody, p2cOwl04aface, p2cOwl04alEye, p2cOwl04arEye, p2cOwl04abeak, p2cOwl04alDarkWing02, p2cOwl04arDarkWing02], 0, {
+    tlp2C.to([
+      p2cOwl04aWBody,
+      p2cOwl04aface,
+      p2cOwl04alEye,
+      p2cOwl04arEye,
+      p2cOwl04abeak,
+      p2cOwl04alDarkWing02,
+      p2cOwl04arDarkWing02
+    ], 0, {
       css: {
         opacity: 1
       }
-    }, "owlflap2-=0.3").to([p2cOwl04rDarkWing01, p2cOwl04lDarkWing01, p2cOwl01, p2cOwl01rEye, p2cOwl01lEye, p2cOwl01beak, p2cOwl01face], 0, {
+    }, "owlflap2-=0.3").to([
+      p2cOwl04rDarkWing01,
+      p2cOwl04lDarkWing01,
+      p2cOwl01,
+      p2cOwl01rEye,
+      p2cOwl01lEye,
+      p2cOwl01beak,
+      p2cOwl01face
+    ], 0, {
       css: {
         opacity: 0
       }
     }, "owlflap2-=0.27");
-
-
-
-
-
-
-
-
 
     /*
     var tlp2CBez = TweenMax.to([p2cOwl04a], 4, {
@@ -1415,16 +1467,18 @@ window.onload = function() {
     }, "owlflap3");
     */
 
-
-
-
-
-
-
-
     //This one is the right one
 
-    tlp2C.to([p2cOwl04aWBody, p2cOwl04aWBodyClip, p2cOwl04aface, p2cOwl04alEye, p2cOwl04arEye, p2cOwl04abeak, p2cOwl04alDarkWing02, p2cOwl04arDarkWing02], 4, {
+    tlp2C.to([
+      p2cOwl04aWBody,
+      p2cOwl04aWBodyClip,
+      p2cOwl04aface,
+      p2cOwl04alEye,
+      p2cOwl04arEye,
+      p2cOwl04abeak,
+      p2cOwl04alDarkWing02,
+      p2cOwl04arDarkWing02
+    ], 4, {
       bezier: {
         values: p2cOwlAnimPath,
         type: "cubic"
@@ -1432,136 +1486,125 @@ window.onload = function() {
       ease: Power2.easeInOut
     }, "volol-=0.25");
 
-
-
     //      ease: Power2.easeInOut
 
-
-
-
-
-
-
     //to bottom point
-    tlp2C.to([p2cOwl04aWBody, p2cOwl04aWBodyClip], 1, {
-        morphSVG: {
-          shape: p2cOwl05WBody,
-          shapeIndex: "83",
-        }
-      }, "owlflap3-=3.5")
-      .to(p2cOwl04aface, 1, {
-        morphSVG: {
-          shape: p2cOwl05face,
-          shapeIndex: "auto",
-        }
-      }, "owlflap3-=3.5").to(p2cOwl04alEye, 1, {
-        morphSVG: {
-          shape: p2cOwl05lEye,
-          shapeIndex: "auto",
-        }
-      }, "owlflap3-=3.5").to(p2cOwl04arEye, 1, {
-        morphSVG: {
-          shape: p2cOwl05rEye,
-          shapeIndex: "auto",
-        }
-      }, "owlflap3-=3.5").to(p2cOwl04abeak, 1, {
-        morphSVG: {
-          shape: p2cOwl05beak,
-          shapeIndex: "auto",
-        }
-      }, "owlflap3-=3.5").to(p2cOwl04alDarkWing02, 1, {
-        morphSVG: {
-          shape: p2cOwl05lDarkWing01,
-          shapeIndex: "auto",
-        }
-      }, "owlflap3-=3.5").to(p2cOwl04arDarkWing02, 1, {
-        morphSVG: {
-          shape: p2cOwl05rDarkWing01,
-          shapeIndex: "auto",
-        }
-      }, "owlflap3-=3.5").to([p2cOwl04alDarkWing02, p2cOwl04arDarkWing02], 0.1, {
-        css: {
-          opacity: 0
-        }
-      }, "owlflap3-=3.3");
-
-
-
-
-
-
+    tlp2C.to([
+      p2cOwl04aWBody, p2cOwl04aWBodyClip
+    ], 1, {
+      morphSVG: {
+        shape: p2cOwl05WBody,
+        shapeIndex: "83"
+      }
+    }, "owlflap3-=3.5").to(p2cOwl04aface, 1, {
+      morphSVG: {
+        shape: p2cOwl05face,
+        shapeIndex: "auto"
+      }
+    }, "owlflap3-=3.5").to(p2cOwl04alEye, 1, {
+      morphSVG: {
+        shape: p2cOwl05lEye,
+        shapeIndex: "auto"
+      }
+    }, "owlflap3-=3.5").to(p2cOwl04arEye, 1, {
+      morphSVG: {
+        shape: p2cOwl05rEye,
+        shapeIndex: "auto"
+      }
+    }, "owlflap3-=3.5").to(p2cOwl04abeak, 1, {
+      morphSVG: {
+        shape: p2cOwl05beak,
+        shapeIndex: "auto"
+      }
+    }, "owlflap3-=3.5").to(p2cOwl04alDarkWing02, 1, {
+      morphSVG: {
+        shape: p2cOwl05lDarkWing01,
+        shapeIndex: "auto"
+      }
+    }, "owlflap3-=3.5").to(p2cOwl04arDarkWing02, 1, {
+      morphSVG: {
+        shape: p2cOwl05rDarkWing01,
+        shapeIndex: "auto"
+      }
+    }, "owlflap3-=3.5").to([
+      p2cOwl04alDarkWing02, p2cOwl04arDarkWing02
+    ], 0.1, {
+      css: {
+        opacity: 0
+      }
+    }, "owlflap3-=3.3");
 
     //to side fly
-    tlp2C.to([p2cOwl04aWBody, p2cOwl04aWBodyClip], 0.8, {
+    tlp2C.to([
+      p2cOwl04aWBody, p2cOwl04aWBodyClip
+    ], 0.8, {
       morphSVG: {
         shape: p2cOwl06WBody,
-        shapeIndex: "4",
+        shapeIndex: "4"
       }
     }, "owlflap4-=2.5").to(p2cOwl04aface, 0.8, {
       morphSVG: {
         shape: p2cOwl06face,
-        shapeIndex: "auto",
+        shapeIndex: "auto"
       }
     }, "owlflap4-=2.5").to(p2cOwl04alEye, 0.8, {
       morphSVG: {
         shape: p2cOwl06lEye,
-        shapeIndex: "auto",
+        shapeIndex: "auto"
       }
     }, "owlflap4-=2.5").to(p2cOwl04arEye, 0.8, {
       morphSVG: {
         shape: p2cOwl06rEye,
-        shapeIndex: "auto",
+        shapeIndex: "auto"
       }
     }, "owlflap4-=2.5").to(p2cOwl04abeak, 0.8, {
       morphSVG: {
         shape: p2cOwl06beak,
-        shapeIndex: "auto",
+        shapeIndex: "auto"
       }
     }, "owlflap4-=2.5");
 
-
-
-
-
     //Owl side fly from
 
-    tlp2C.to([p2cOwl04aWBody, p2cOwl04aWBodyClip], 0.8, {
+    tlp2C.to([
+      p2cOwl04aWBody, p2cOwl04aWBodyClip
+    ], 0.8, {
       morphSVG: {
         shape: p2cOwl07WBody,
-        shapeIndex: "99",
+        shapeIndex: "99"
       }
     }, "owlflap5-=1.7").to(p2cOwl04aface, 0.8, {
       morphSVG: {
         shape: p2cOwl06face,
-        shapeIndex: "auto",
+        shapeIndex: "auto"
       }
     }, "owlflap5-=1.7").to(p2cOwl04alEye, 0.8, {
       morphSVG: {
         shape: p2cOwl07lEye,
-        shapeIndex: "auto",
+        shapeIndex: "auto"
       }
     }, "owlflap5-=1.7").to(p2cOwl04arEye, 0.8, {
       morphSVG: {
         shape: p2cOwl07rEye,
-        shapeIndex: "auto",
+        shapeIndex: "auto"
       }
     }, "owlflap5-=1.7").to(p2cOwl04abeak, 0.8, {
       morphSVG: {
         shape: p2cOwl07beak,
-        shapeIndex: "auto",
+        shapeIndex: "auto"
       }
-    }, "owlflap5-=1.7").to([p2cOwl04aface, p2cOwl04alEye, p2cOwl04arEye, p2cOwl04abeak], 0.3, {
+    }, "owlflap5-=1.7").to([
+      p2cOwl04aface, p2cOwl04alEye, p2cOwl04arEye, p2cOwl04abeak
+    ], 0.3, {
       css: {
         opacity: 0
       }
     }, "owlflap5-=1.6");
 
-
-
-
-
     //owl flies off...
-    tlp2C.to([p2cOwl04aWBody, p2cOwl04aWBodyClip], 0.7, {
+    tlp2C.to([
+      p2cOwl04aWBody, p2cOwl04aWBodyClip
+    ], 0.7, {
       morphSVG: {
         shape: p2cOwl08WBody,
         shapeIndex: "-65"
@@ -1573,8 +1616,6 @@ window.onload = function() {
     }, "owlflap6-=0.2");
 
   }
-
-
 
   pageLoader(p1TilesInput);
 };
