@@ -4,14 +4,15 @@
 <head>
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-  <title>Welcome Tile</title>
+  <title>Up next tile</title>
   <link rel="stylesheet" type="text/css" href="../../MyFontsWebfontsKit.css" />
   <style>
-  .FranklinGothicURW-Hea {
-    font-family: FranklinGothicURW-Hea;
-    font-weight: normal;
-    font-style: normal;
-  }
+    .FranklinGothicURW-Hea {
+      font-family: FranklinGothicURW-Hea;
+      font-weight: normal;
+      font-style: normal;
+    }
+
     @font-face {
       font-family: 'ArchivoBlackRegular';
       src: url('../../fonts/ArchivoBlack-Regular.ttf') format('truetype');
@@ -60,8 +61,14 @@
     p {
       margin: 0;
       padding: 0;
-      margin-top: 10px;
-      margin-bottom: 10px;
+      font-size: 20px;
+      line-height: 22px;
+      word-spacing: -0.9px;
+    }
+
+    pre {
+      margin: 0;
+      padding: 0;
       font-size: 20px;
       line-height: 22px;
       word-spacing: -0.9px;
@@ -70,40 +77,72 @@
     /* Tile style */
 
     body {
-      width: 359px;
-      height: 479px;
+      width: 989px;
+      height: 184px;
       background-color: white;
       -ms-overflow-style: none;
     }
 
-    #welcomeContent {
+    #upNextTxt {
       position: relative;
-      top: 70px;
-      left: 49px;
-      width: 290px;
+      top: 15px;
+      left: 27px;
+      writing-mode: vertical-rl;
+      text-orientation: mixed;
+      display: inline;
     }
 
-    #welcomeText {
-      text-align: justify;
-      width: 290px;
+    #webWorkBox {
+      float: right;
+      background-color: hsl(196, 25%, 38%);
+      width: 825px;
+      height: 170px;
+      position:relative;
+      right:0px;
     }
 
-    #welcomeAwesome {
-      margin-top: 70px;
-      font-size: 28px;
+    .pretxt {
+      font: 20px FranklinGothicURW-Hea, 'ArchivoBlackRegular', sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    #WEBtxt {
+      float:right;
       color: hsl(0, 75%, 70%);
-      text-align: right;
-      width: 290px;
+      font-size: 125px;
+      line-height: 125px;
+      position:relative;
+      top:-15px;
+      right:2px;
+      height:126px;
+      width:265px;
+    }
+
+    #WORKtxt {
+      color: hsl(0, 100%, 100%);
+      font-size: 40px;
+      line-height: 40px;
+      position: absolute;
+      top: 61px;
+      right: 2px;
     }
   </style>
 </head>
 
 <body>
-  <main id="welcomeContent">
+  <main id="UpnextContent">
+    <p id="upNextTxt">UP NEXT..</p>
+    <div id="webWorkBox">
+        <pre class="pretxt" id="WEBtxt">WEB</pre>
+        <pre class="pretxt" id="WORKtxt">WORK</pre>
+    </div>
+    <!--
     <h1>Welcome and..</h1>
     <p id="welcomeText">..Greetings! My name is <mark style="color:hsl(196, 25%, 38%);">Vance</mark>. I'm here to <mark style="color:hsl(0, 75%, 70%);">connect your business with customers</mark>. From zero to working website and/or webapp - just tell me about your problems, we will think them through. </p>
     <p>Is that what you looking for?..</p>
     <p id="welcomeAwesome">..Awesome!</p>
+  -->
   </main>
 </body>
 

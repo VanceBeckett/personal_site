@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>Content tile template</title>
+  <link rel="stylesheet" type="text/css" href="../../../MyFontsWebfontsKit.css" />
+  <style>
+    .FranklinGothicURW-Hea {
+      font-family: FranklinGothicURW-Hea;
+      font-weight: normal;
+      font-style: normal;
+    }
+
+    @font-face {
+      font-family: 'ArchivoBlackRegular';
+      src: url('../../../fonts/ArchivoBlack-Regular.ttf') format('truetype');
+      font-weight: normal;
+      font-style: normal;
+    }
+
+    /* Resetting default CSS properties */
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      font-weight: normal;
+      margin: 0;
+      padding: 0;
+    }
+
+    mark {
+      background: none;
+    }
+
+    img {
+      display: block;
+    }
+
+    body {
+      font: 20px FranklinGothicURW-Hea, 'ArchivoBlackRegular', sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    h1 {
+      font-size: 35px;
+      margin-bottom: 30px;
+    }
+
+    h2 {
+      font-size: 28px;
+      margin-bottom: 50px;
+    }
+
+    p,
+    pre {
+      margin: 0;
+      padding: 0;
+      margin-top: 10px;
+      margin-bottom: 10px;
+      font: 20px FranklinGothicURW-Hea, 'ArchivoBlackRegular', sans-serif;
+      font-size: 20px;
+      line-height: 22px;
+      word-spacing: -0.9px;
+      text-align: justify;
+    }
+
+    strong {
+      margin: 0;
+      padding: 0;
+      border: 0;
+      font: inherit;
+      font-size: 28px;
+    }
+
+    /* Tile style */
+
+    body {
+      width: 389px;
+      height: 684px;
+      background-color: white;
+    }
+
+    #p2Content2 {
+      position: relative;
+      top: 55px;
+      left: 75px;
+      width: 280px;
+    }
+
+    #p2T2title {
+      max-width: 270px;
+    }
+
+    #p2T2thumbnail {
+      width: 280px;
+      height: 170px;
+      background-color: hsl(0, 75%, 70%);
+    }
+
+    #p2T2txt {
+      text-align: justify;
+      max-width: 280px;
+    }
+
+    #p2T2subtitle {
+      margin-top: 50px;
+      margin-bottom: 25px;
+    }
+
+    .p2T2txtParagraph {
+      margin-top: 25px;
+    }
+  </style>
+</head>
+
+<body>
+  <article id="p2Content2">
+    <h1 id="p2T2title">ANOTHER TITLE</h1>
+    <div id="p2T2thumbnail"></div>
+    <div id="p2T2txt">
+      <h2 id="p2T2subtitle">Some <mark style="color:hsl(0, 75%, 70%);">preface</mark>..</h2>
+      <p class="p2T2txtParagraph">Placeholder text for this tile. There would be some info about this work. Text would be written in a way, so it would be readable with justify property. Lorem ipsum dolor..</p>
+      <p class="p2T2txtParagraph">Placeholder text for this tile. There would be some content and maybe a pop-up. Haven't decided yet..</p>
+    </div>
+  </article>
+</body>
+
+</html>

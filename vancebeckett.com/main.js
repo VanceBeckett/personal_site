@@ -12,14 +12,6 @@ var p1AnimStarted = false;
 
 window.onload = function() {
 
-  /*
-    var tlp2C = new TimelineMax({
-      delay: 0, //First animation in the timeline would have a glitched start on chrome without this
-    });
-  */
-
-
-
 
   //****** Variables *******//
 
@@ -28,12 +20,12 @@ window.onload = function() {
   //Main tl for layout and staff
   var tl = new TimelineMax();
 
-  //Page1 animation
+  //Page1 animation timline
   var tlp1C = new TimelineMax({delay: 0});
-  //Page1 loop animation
+  //Page1 loop animation timeline
   var tlp1CSt = new TimelineMax({delay: 0, repeat: -1, repeatDelay: -0.4});
 
-  //Page2 animation
+  //Page2 animation timelines
   var tlp2C = new TimelineMax({delay: 0});
   var tlp2CWind = new TimelineMax({delay: 0, repeat: -1, repeatDelay: 0.2});
   var tlp2cStar1 = new TimelineMax({delay: 0, repeat: -1, repeatDelay: 1.2});
@@ -57,11 +49,11 @@ window.onload = function() {
 
   //header
   var navTile = document.getElementById("navTile"),
-    tocHighliterLine = document.getElementById("tocHighliterLine"),
-    tocSectionHighlight = document.getElementById("tocSectionHighlight");
+    navULineLine = document.getElementById("navULineLine"),
+    navULineSVG = document.getElementById("navULineSVG");
 
   //Table of content button click event
-  var navButton1 = document.getElementById("toc1");
+  var navButton1 = document.getElementById("navBtn1");
   if (navButton1) {
     navButton1.addEventListener("click", function() {
       pageLoader(p1TilesInput);
@@ -71,7 +63,7 @@ window.onload = function() {
       pageLoader(p1TilesInput);
     }, false);
   }
-  var navButton2 = document.getElementById("toc2");
+  var navButton2 = document.getElementById("navBtn2");
   if (navButton2) {
     navButton2.addEventListener("click", function() {
       pageLoader(p2TilesInput);
@@ -81,7 +73,7 @@ window.onload = function() {
       pageLoader(p2TilesInput);
     }, false);
   }
-  var navButton4 = document.getElementById("toc4");
+  var navButton4 = document.getElementById("navBtn4");
   if (navButton4) {
     navButton4.addEventListener("click", function() {
       tlp1C.invalidate().restart().clear();
@@ -95,7 +87,7 @@ window.onload = function() {
   var p1ComicTileInput = [
       [
         "class",
-        "comicTiles p1Content",
+        "p1Content",
         "id",
         "p1ComicTile",
         "type",
@@ -103,7 +95,7 @@ window.onload = function() {
         "data",
         "tiles/p1/p1Comic.svg",
         "style",
-        "display:none;width:605px;height:503px;opacity:0;box-shadow: -12.5px 12.5px hsla(0, 0%, 0%, 0.5)",
+        "display:none;width:605px;height:500px;opacity:0;box-shadow: -12.5px 12.5px hsla(0, 0%, 0%, 0.5)",
         "alt",
         "Beginning of a comics. Page 1 shows the comet (which represents a bussiness that has difficulsties with its branding) falling from the sky. Main characters - The Man and wolf Wewawet observe the comet, thinking if they can help."
       ],
@@ -112,7 +104,7 @@ window.onload = function() {
     p1WelcomeTileInput = [
       [
         "class",
-        "tiles p1Content",
+        "p1Content",
         "id",
         "p1WelcomeTile",
         "type",
@@ -120,14 +112,14 @@ window.onload = function() {
         "data",
         "tiles/p1/p1WelcomeTile.html",
         "style",
-        "display:none;width:380px;height:480px;opacity:0;box-shadow: -12.5px 12.5px hsla(0, 0%, 0%, 0.5)"
+        "display:none;width:360px;height:480px;opacity:0;box-shadow: -12.5px 12.5px hsla(0, 0%, 0%, 0.5)"
       ],
       "tiles/p1/p1WelcomeTile.html"
     ],
     p1PromiseTileInput = [
       [
         "class",
-        "tiles p1Content",
+        "p1Content",
         "id",
         "p1PromiseTile",
         "type",
@@ -135,14 +127,14 @@ window.onload = function() {
         "data",
         "tiles/p1/p1PromiseTile.html",
         "style",
-        "display:none;width:636px;height:265px;opacity:0;box-shadow: -12.5px 12.5px hsla(0, 0%, 0%, 0.5)"
+        "display:none;width:605px;height:450px;opacity:0;box-shadow: -12.5px 12.5px hsla(0, 0%, 0%, 0.5)"
       ],
       "tiles/p1/p1PromiseTile.html"
     ],
     p1DoggieTileInput = [
       [
         "class",
-        "comicTiles p1Content",
+        "p1Content",
         "id",
         "p1Doggie",
         "type",
@@ -150,17 +142,32 @@ window.onload = function() {
         "data",
         "tiles/p1/p1Doggie.svg",
         "style",
-        "display:none;width:347px;height:430px;opacity:0;box-shadow: -12.5px 12.5px hsla(0, 0%, 0%, 0.5)",
+        "display:none;width:360px;height:470px;opacity:0;box-shadow: -12.5px 12.5px hsla(0, 0%, 0%, 0.5)",
         "alt",
         "Wepwawet says that peoples tell the next page may be too colorful for you (each page has its own color scheme)."
       ],
       "tiles/p1/p1Doggie.svg"
+    ],
+    p1UpNextTileInput = [
+      [
+        "class",
+        "p1Content",
+        "id",
+        "p1UpNextTile",
+        "type",
+        "image/svg+xml",
+        "data",
+        "tiles/p1/p1UpNextTile.svg",
+        "style",
+        "display:none;width:990px;height:185px;opacity:0;box-shadow: -12.5px 12.5px hsla(0, 0%, 0%, 0.5)"
+      ],
+      "tiles/p1/p1UpNextTile.svg"
     ];
 
   var p2ComicTileInput = [
       [
         "class",
-        "comicTiles p2Content",
+        "p2Content",
         "id",
         "p2ComicTile",
         "type",
@@ -168,62 +175,92 @@ window.onload = function() {
         "data",
         "tiles/p2/p2Comic.svg",
         "style",
-        "display:none;width:782px;height:442px;opacity:0;box-shadow: -12.5px 12.5px hsla(0, 0%, 0%, 0.5)",
+        "display:none;width:780px;height:440px;opacity:0;box-shadow: -12.5px 12.5px hsla(0, 0%, 0%, 0.5)",
         "alt",
         "Page 2 of the comic shows our characters at the mountain thinking what is wrong with the &quot;business&quot; just before they went to help."
       ],
       "tiles/p2/p2Comic.svg"
     ],
+    p2HeaderTileInput = [
+        [
+          "class",
+          "p2Content",
+          "id",
+          "p2HeaderTile",
+          "type",
+          "image/svg+xml",
+          "data",
+          "tiles/p2/p2HeaderTile.svg",
+          "style",
+          "display:none;width:185px;height:440px;opacity:0;box-shadow: -12.5px 12.5px hsla(0, 0%, 0%, 0.5)"
+        ],
+        "tiles/p2/p2HeaderTile.svg"
+      ],
     p2Tile1Input = [
       [
         "class",
-        "comicTiles p2Content",
+        "p2Content",
         "id",
         "p2Tile1",
         "type",
-        "image/svg+xml",
+        "text/html",
         "data",
-        "tiles/p2/content/p2Tile1.svg",
+        "tiles/p2/content/p2Tile1.html",
         "style",
-        "display:none;width:710px;height:330px;opacity:0;box-shadow: -12.5px 12.5px hsla(0, 0%, 0%, 0.5)",
+        "display:none;width:575px;height:330px;opacity:0;box-shadow: -12.5px 12.5px hsla(0, 0%, 0%, 0.5)",
         "alt",
-        "Temporary dummy. This one will be in HTML soon"
+        "Temporary dummy. This one will be filled with content soon."
       ],
-      "tiles/p2/content/p2Tile1.svg"
+      "tiles/p2/content/p2Tile1.html"
     ],
     p2Tile2Input = [
       [
         "class",
-        "comicTiles p2Content",
+        "p2Content",
         "id",
         "p2Tile2",
         "type",
-        "image/svg+xml",
+        "text/html",
         "data",
-        "tiles/p2/content/p2Tile2.svg",
+        "tiles/p2/content/p2Tile2.html",
         "style",
-        "display:none;width:430px;height:572px;opacity:0;box-shadow: -12.5px 12.5px hsla(0, 0%, 0%, 0.5)",
+        "display:none;width:390px;height:685px;opacity:0;box-shadow: -12.5px 12.5px hsla(0, 0%, 0%, 0.5)",
         "alt",
-        "Temporary dummy. This one will be in HTML soon"
+        "Temporary dummy. This one will be filled with content soon."
       ],
-      "tiles/p2/content/p2Tile2.svg"
+      "tiles/p2/content/p2Tile2.html"
     ],
     p2Tile3Input = [
       [
         "class",
-        "comicTiles p2Content",
+        "p2Content",
         "id",
         "p2Tile3",
         "type",
+        "text/html",
+        "data",
+        "tiles/p2/content/p2Tile3.html",
+        "style",
+        "display:none;width:575px;height:330px;opacity:0;box-shadow: -12.5px 12.5px hsla(0, 0%, 0%, 0.5)",
+        "alt",
+        "Temporary dummy. This one will be filled with content soon."
+      ],
+      "tiles/p2/content/p2Tile3.html"
+    ],
+    p2UpNextTileInput = [
+      [
+        "class",
+        "p2Content",
+        "id",
+        "p2UpNextTile",
+        "type",
         "image/svg+xml",
         "data",
-        "tiles/p2/content/p2Tile3.svg",
+        "tiles/p2/p2UpNextTile.svg",
         "style",
-        "display:none;width:710px;height:330px;opacity:0;box-shadow: -12.5px 12.5px hsla(0, 0%, 0%, 0.5)",
-        "alt",
-        "Temporary dummy. This one will be in HTML soon"
+        "display:none;width:990px;height:185px;opacity:0;box-shadow: -12.5px 12.5px hsla(0, 0%, 0%, 0.5)"
       ],
-      "tiles/p2/content/p2Tile3.svg"
+      "tiles/p2/p2UpNextTile.svg"
     ];
 
   var redColor = "hsl(0, 75%, 70%)",
@@ -232,13 +269,13 @@ window.onload = function() {
   var p1TilesInput = {
     pNumber: 1,
     pTiles: [
-      p1ComicTileInput, p1WelcomeTileInput, p1PromiseTileInput, p1DoggieTileInput
+      p1ComicTileInput, p1WelcomeTileInput, p1PromiseTileInput, p1DoggieTileInput, p1UpNextTileInput
     ],
     pTilesObjects: [
-      0, 0, 0, 0
+      0, 0, 0, 0, 0
     ],
     pTilesIDs: [
-      0, 0, 0, 0
+      0, 0, 0, 0, 0
     ],
     classSelector: ".p1Content",
     bkgColor: "hsl(196, 75%, 75%)",
@@ -255,13 +292,13 @@ window.onload = function() {
   var p2TilesInput = {
     pNumber: 2,
     pTiles: [
-      p2ComicTileInput, p2Tile1Input, p2Tile2Input, p2Tile3Input
+      p2ComicTileInput, p2HeaderTileInput, p2Tile1Input, p2Tile2Input, p2Tile3Input, p2UpNextTileInput
     ],
     pTilesObjects: [
-      0, 0, 0, 0
+      0, 0, 0, 0, 0, 0
     ],
     pTilesIDs: [
-      0, 0, 0, 0
+      0, 0, 0, 0, 0, 0
     ],
     classSelector: ".p2Content",
     bkgColor: "hsl(318, 75%, 75%)",
@@ -319,10 +356,7 @@ window.onload = function() {
                   if (pTilesInput.pTiles[j][0][11] !== undefined) {
                     appendedObj.alt = pTilesInput.pTiles[j][0][11];
                   }
-
                   pTilesInput.pTilesIDs.splice(j, 1, document.getElementById(pTilesInput.pTiles[j][0][3]));
-                  console.log(pTilesInput.pTiles[j][0][3]);
-                  console.log(pTilesInput.pTiles[j][0][9]);
                 }
                 pageFlip(pTilesInput);
               }
@@ -501,11 +535,11 @@ window.onload = function() {
           css: {
             backgroundColor: toPage.bkgColor
           }
-        }, 0).to(tocHighliterLine, bkgColorChangeDuration, {
+        }, 0).to(navULineLine, bkgColorChangeDuration, {
           attr: {
             "stroke": toPage.weakColor
           }
-        }, 0).to(tocSectionHighlight, bkgColorChangeDuration, {
+        }, 0).to(navULineSVG, bkgColorChangeDuration, {
           css: {
             left: toPage.tocHighliterPosition,
             ease: Power3.easeOut
