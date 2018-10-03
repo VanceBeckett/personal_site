@@ -82,6 +82,21 @@ window.onload = function() {
     }, false);
   }
 
+  function p1UpNextButtonAction() {
+    var p1UpNextButton = document.getElementById("p1UpNextTile").contentDocument.getElementById("p1UpNextTileBody");
+    if (p1UpNextButton) {
+      p1UpNextButton.style.cursor = "pointer";
+      p1UpNextButton.addEventListener("click", function() {
+        pageLoader(p2TilesInput);
+      }, false);
+    } else {
+      p1UpNextButton.attachEvent("onclick", function() {
+        pageLoader(p2TilesInput);
+      }, false);
+    }
+  }
+
+  //  Page content Elements
   var p1ComicTileInput = [
       [
         "class",
@@ -93,7 +108,7 @@ window.onload = function() {
         "data",
         "tiles/p1/p1Comic.svg",
         "style",
-        "display:none;max-width:605px;max-height:500px;opacity:0;box-shadow: -12.5px 12.5px hsla(0, 0%, 0%, 0.5)",
+        "display:none;width:100%;max-width:605px;max-height:500px;opacity:0;box-shadow: -12.5px 12.5px hsla(0, 0%, 0%, 0.5)",
         "alt",
         "Beginning of a comics. Page 1 shows the comet (which represents a bussiness that has difficulsties with its branding) falling from the sky. Main characters - The Man and wolf Wewawet observe the comet, thinking if they can help."
       ],
@@ -143,7 +158,7 @@ window.onload = function() {
         "data",
         "tiles/p1/p1Doggie.svg",
         "style",
-        "display:none;max-width:360px;max-height:470px;opacity:0;box-shadow: -12.5px 12.5px hsla(0, 0%, 0%, 0.5)",
+        "display:none;width:100%;max-width:360px;max-height:470px;opacity:0;box-shadow: -12.5px 12.5px hsla(0, 0%, 0%, 0.5)",
         "alt",
         "Wepwawet says that peoples tell the next page may be too colorful for you (each page has its own color scheme)."
       ],
@@ -178,11 +193,12 @@ window.onload = function() {
         "data",
         "tiles/p2/p2Comic.svg",
         "style",
-        "display:none;width:780px;height:440px;opacity:0;box-shadow: -12.5px 12.5px hsla(0, 0%, 0%, 0.5)",
+        "display:none;width:100%;max-width:780px;max-height:440px;opacity:0;box-shadow: -12.5px 12.5px hsla(0, 0%, 0%, 0.5)",
         "alt",
         "Page 2 of the comic shows our characters at the mountain thinking what is wrong with the &quot;business&quot; just before they went to help."
       ],
-      "tiles/p2/p2Comic.svg"
+      "tiles/p2/p2Comic.svg",
+      "svg527"
     ],
     p2HeaderTileInput = [
       [
@@ -195,7 +211,7 @@ window.onload = function() {
         "data",
         "tiles/p2/p2HeaderTile.svg",
         "style",
-        "display:none;width:185px;height:440px;opacity:0;box-shadow: -12.5px 12.5px hsla(0, 0%, 0%, 0.5)"
+        "display:none;width:100%;max-width:185px;height:440px;opacity:0;box-shadow: -12.5px 12.5px hsla(0, 0%, 0%, 0.5)"
       ],
       "tiles/p2/p2HeaderTile.svg"
     ],
@@ -210,7 +226,7 @@ window.onload = function() {
         "data",
         "tiles/p2/content/p2Tile1.html",
         "style",
-        "display:none;width:575px;height:330px;opacity:0;box-shadow: -12.5px 12.5px hsla(0, 0%, 0%, 0.5)",
+        "display:none;width:100%;max-width:575px;min-height:330px;opacity:0;box-shadow: -12.5px 12.5px hsla(0, 0%, 0%, 0.5)",
         "alt",
         "Temporary dummy. This one will be filled with content soon."
       ],
@@ -227,7 +243,7 @@ window.onload = function() {
         "data",
         "tiles/p2/content/p2Tile2.html",
         "style",
-        "display:none;width:390px;height:685px;opacity:0;box-shadow: -12.5px 12.5px hsla(0, 0%, 0%, 0.5)",
+        "display:none;width:100%;max-width:390px;min-height:685px;opacity:0;box-shadow: -12.5px 12.5px hsla(0, 0%, 0%, 0.5)",
         "alt",
         "Temporary dummy. This one will be filled with content soon."
       ],
@@ -244,7 +260,7 @@ window.onload = function() {
         "data",
         "tiles/p2/content/p2Tile3.html",
         "style",
-        "display:none;width:575px;height:330px;opacity:0;box-shadow: -12.5px 12.5px hsla(0, 0%, 0%, 0.5)",
+        "display:none;width:100%;max-width:575px;min-height:330px;opacity:0;box-shadow: -12.5px 12.5px hsla(0, 0%, 0%, 0.5)",
         "alt",
         "Temporary dummy. This one will be filled with content soon."
       ],
@@ -257,13 +273,13 @@ window.onload = function() {
         "id",
         "p2UpNextTile",
         "type",
-        "image/svg+xml",
+        "text/html",
         "data",
-        "tiles/p2/p2UpNextTile.svg",
+        "tiles/p2/p2UpNextTile.html",
         "style",
         "display:none;width:100%;max-width:990px;height:185px;opacity:0;box-shadow: -12.5px 12.5px hsla(0, 0%, 0%, 0.5)"
       ],
-      "tiles/p2/p2UpNextTile.svg"
+      "tiles/p2/p2UpNextTile.html"
     ];
 
   var redColor = "hsl(0, 75%, 70%)",
@@ -517,6 +533,13 @@ window.onload = function() {
     if (toPage.pNumber !== currentPage && flippingPage !== true) {
       flippingPage = true;
 
+
+//Scroll to top of the page
+      (function() {
+        TweenMax.to(document.body, 1, {scrollTop: 0}); //For Safari
+        TweenMax.to(document.documentElement, 1, {scrollTop: 0}); //For Chrome, Firefox, IE and Opera
+      })()
+
       var disappArr;
       switch (currentPage) {
         case 1:
@@ -546,6 +569,7 @@ window.onload = function() {
           itemSelector: toPage.clasSelector,
           gutter: 25
         });
+        p1UpNextButtonAction();
         function pckryLayoutReset() {
           pckry.layout();
         };
