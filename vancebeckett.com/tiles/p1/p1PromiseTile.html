@@ -54,7 +54,8 @@
 
     h2 {
       font-size: 28px;
-      margin-bottom: 25px;
+      /* margin-bottom: 25px; */
+      line-height: 35px;
     }
 
     p {
@@ -70,29 +71,34 @@
     /* Tile style */
 
     body {
-      width: 604px;
-      height: 449px;
+      max-width: 605px;
       background-color: white;
+      overflow: hidden;
+      -ms-overflow-style: none;
     }
 
     #promiseContent {
-      position: relative;
-      top: 55px;
+      /* position: relative; */
+      /* top: 55px;
       left: 75px;
-      width: 494px;
+      width: 494px; */
+      /* margin: 55px 35px 25px 75px; */
+      padding:55px 35px 40px 75px;
+      max-width: 495px;
       text-align: justify;
     }
+
   </style>
 </head>
 
-<body>
+<body id="p1PromiseTileBody" style="min-height: 450px;">
   <article id="promiseContent">
-    <h2>Now, to the <mark style="color:hsl(0, 75%, 70%);">specifics</mark>..</h2>
-    <p>What can you expect from me? Well, here some short list of things I'm capable of:</p>
+    <h2 style="margin-bottom:25px">Now, to the <mark style="color:hsl(0, 75%, 70%);">specifics</mark>..</h2>
+    <p>What can you expect from me? Well, here is some short list of things I'm capable of</p>
     <p><mark style="color:hsl(196, 75%, 75%);">Docker</mark> - I can greatly speed up and standardize your work process. Create secure web servers for production and developing in minutes, deploy them in seconds.</p>
     <p><mark style="color:hsl(196, 25%, 38%);">Web animations</mark> of any degree of difficulty using SVG and GreenSock. Including interactive animations and games, intricate user interfaces and designs.</p>
     <p><mark style="color:hsl(0, 75%, 70%);">Everything</mark> NodeJS, React, MongoDB..</p>
-    <h2 style="float:right; position:relative; top:5px;"><mark style="color:hsl(0, 75%, 70%);">..and more.</mark></h2>
+    <h2 style="text-align: right; margin-top:5px;"><mark style="color:hsl(0, 75%, 70%);">..and more.</mark></h2>
   </article>
 </body>
 

@@ -4,8 +4,8 @@
 <head>
 	<meta charset="UTF-8" />
 	<title>VanceBeckett's Portfolio</title>
-	<meta name="description" content="Designs, illustrations, animations, web." />
-	<meta name="keywords" content="webdesign, front-end, SVG, animation">
+	<meta name="description" content="Designs, illustrations and animations in web. Full stack developer." />
+	<meta name="keywords" content="webdesigns, front-end, back-end, SVG, animations,docker, nodejs, node, react">
 	<meta name="author" content="Vance Beckett" />
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<meta name="theme-color" content="#8FD6EF" />
@@ -33,45 +33,50 @@
 */
 
 -->
-<link rel="stylesheet" type="text/css" href="MyFontsWebfontsKit.css">
+	<link rel="stylesheet" type="text/css" href="MyFontsWebfontsKit.css">
 </head>
 
 <body>
 
-		<header>
+	<header>
 
-			<nav class="tiles" id="navTile">
-					<ol id="navLayout">
-						<li>
-							<a class="navButtons" id="navBtn1">Introduction</a>
-						</li>
-						<li>
-							<a class="navButtons" id="navBtn2">Work</a>
-						</li>
-						<li>
-							<a class="navButtons" id="navBtn3">(B)log</a>
-						</li>
-						<li>
-							<a class="navButtons" id="navBtn4">Contact info</a>
-						</li>
-					</ol>
-					<svg id="navULineSVG"> <line id="navULineLine" x1="0" y1="0" x2="200" stroke="hsl(196,75%,75%)" stroke-width="8" /></svg>
-			</nav>
+		<nav class="tiles" id="navTile">
+			<ol id="navLayout">
+				<li class="mobileNavBttns">
+					 <button type="button" class="navButtons" id="navBtnMenu">Menu</button>
+				</li>
 
-		</header>
+				<li class="desktopNavBttns">
+					<button type="button" class="navButtons" id="navBtn1">Introduction</button>
+				</li>
+				<li class="desktopNavBttns">
+					<button type="button" class="navButtons" id="navBtn2">Works</button>
+				</li>
+				<li class="desktopNavBttns">
+					<button type="button" class="navButtons" id="navBtn3">(B)log</button>
+				</li>
+				<li class="desktopNavBttns">
+					<button type="button" class="navButtons" id="navBtn4">Contact info</button>
+				</li>
+			</ol>
+			<svg id="navULineSVG">
+				<line id="navULineLine" x1="0" y1="0" x2="200" stroke="hsl(196,75%,75%)" stroke-width="8" /></svg>
+		</nav>
+
+	</header>
 
 
-		<main class="tileGridContainer" id="contentLayout"></main>
+	<main class="tileGridContainer" id="contentLayout"></main>
 
 	<script type="text/javascript" src="libs/packery.pkgd.min.js"></script>
-<!--
+	<!--
 	<script type="text/javascript" src="libs/draggabilly.pkgd.min.js"></script>
 -->
 	<script type="text/javascript" src="libs/TweenMax.min.js"></script>
 	<script type="text/javascript" src="libs/TimelineMax.min.js"></script>
 	<script type="text/javascript" src="libs/MorphSVGPlugin.min.js"></script>
 	<script type="text/javascript" src="libs/CustomEase.min.js"></script>
-<!--
+	<!--
 	<script type="text/javascript" src="libs/ScrollMagic.min.js"></script>
 -->
 	<script type="text/javascript" src="main.js"></script>

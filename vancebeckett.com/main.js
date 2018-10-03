@@ -9,9 +9,7 @@ var previousAnim;
 
 var p1AnimStarted = false;
 
-
 window.onload = function() {
-
 
   //****** Variables *******//
 
@@ -95,11 +93,12 @@ window.onload = function() {
         "data",
         "tiles/p1/p1Comic.svg",
         "style",
-        "display:none;width:605px;height:500px;opacity:0;box-shadow: -12.5px 12.5px hsla(0, 0%, 0%, 0.5)",
+        "display:none;max-width:605px;max-height:500px;opacity:0;box-shadow: -12.5px 12.5px hsla(0, 0%, 0%, 0.5)",
         "alt",
         "Beginning of a comics. Page 1 shows the comet (which represents a bussiness that has difficulsties with its branding) falling from the sky. Main characters - The Man and wolf Wewawet observe the comet, thinking if they can help."
       ],
-      "tiles/p1/p1Comic.svg"
+      "tiles/p1/p1Comic.svg",
+      "svg753"
     ],
     p1WelcomeTileInput = [
       [
@@ -112,9 +111,10 @@ window.onload = function() {
         "data",
         "tiles/p1/p1WelcomeTile.html",
         "style",
-        "display:none;width:360px;height:480px;opacity:0;box-shadow: -12.5px 12.5px hsla(0, 0%, 0%, 0.5)"
+        "display:none;width:100%;max-width:360px;min-height:480px;opacity:0;box-shadow: -12.5px 12.5px hsla(0, 0%, 0%, 0.5)"
       ],
-      "tiles/p1/p1WelcomeTile.html"
+      "tiles/p1/p1WelcomeTile.html",
+      "p1WelcomeTileBody"
     ],
     p1PromiseTileInput = [
       [
@@ -127,9 +127,10 @@ window.onload = function() {
         "data",
         "tiles/p1/p1PromiseTile.html",
         "style",
-        "display:none;width:605px;height:450px;opacity:0;box-shadow: -12.5px 12.5px hsla(0, 0%, 0%, 0.5)"
+        "display:none;width:100%;max-width:605px;min-height:450px;opacity:0;box-shadow: -12.5px 12.5px hsla(0, 0%, 0%, 0.5)"
       ],
-      "tiles/p1/p1PromiseTile.html"
+      "tiles/p1/p1PromiseTile.html",
+      "p1PromiseTileBody"
     ],
     p1DoggieTileInput = [
       [
@@ -142,11 +143,12 @@ window.onload = function() {
         "data",
         "tiles/p1/p1Doggie.svg",
         "style",
-        "display:none;width:360px;height:470px;opacity:0;box-shadow: -12.5px 12.5px hsla(0, 0%, 0%, 0.5)",
+        "display:none;max-width:360px;max-height:470px;opacity:0;box-shadow: -12.5px 12.5px hsla(0, 0%, 0%, 0.5)",
         "alt",
         "Wepwawet says that peoples tell the next page may be too colorful for you (each page has its own color scheme)."
       ],
-      "tiles/p1/p1Doggie.svg"
+      "tiles/p1/p1Doggie.svg",
+      "svg170"
     ],
     p1UpNextTileInput = [
       [
@@ -155,13 +157,14 @@ window.onload = function() {
         "id",
         "p1UpNextTile",
         "type",
-        "image/svg+xml",
+        "text/html",
         "data",
-        "tiles/p1/p1UpNextTile.svg",
+        "tiles/p1/p1UpNextTile.html",
         "style",
-        "display:none;width:990px;height:185px;opacity:0;box-shadow: -12.5px 12.5px hsla(0, 0%, 0%, 0.5)"
+        "display:none;width:100%;max-width:990px;height:185px;opacity:0;box-shadow: -12.5px 12.5px hsla(0, 0%, 0%, 0.5)"
       ],
-      "tiles/p1/p1UpNextTile.svg"
+      "tiles/p1/p1UpNextTile.html",
+      "p1UpNextTileBody"
     ];
 
   var p2ComicTileInput = [
@@ -182,20 +185,20 @@ window.onload = function() {
       "tiles/p2/p2Comic.svg"
     ],
     p2HeaderTileInput = [
-        [
-          "class",
-          "p2Content",
-          "id",
-          "p2HeaderTile",
-          "type",
-          "image/svg+xml",
-          "data",
-          "tiles/p2/p2HeaderTile.svg",
-          "style",
-          "display:none;width:185px;height:440px;opacity:0;box-shadow: -12.5px 12.5px hsla(0, 0%, 0%, 0.5)"
-        ],
-        "tiles/p2/p2HeaderTile.svg"
+      [
+        "class",
+        "p2Content",
+        "id",
+        "p2HeaderTile",
+        "type",
+        "image/svg+xml",
+        "data",
+        "tiles/p2/p2HeaderTile.svg",
+        "style",
+        "display:none;width:185px;height:440px;opacity:0;box-shadow: -12.5px 12.5px hsla(0, 0%, 0%, 0.5)"
       ],
+      "tiles/p2/p2HeaderTile.svg"
+    ],
     p2Tile1Input = [
       [
         "class",
@@ -258,7 +261,7 @@ window.onload = function() {
         "data",
         "tiles/p2/p2UpNextTile.svg",
         "style",
-        "display:none;width:990px;height:185px;opacity:0;box-shadow: -12.5px 12.5px hsla(0, 0%, 0%, 0.5)"
+        "display:none;width:100%;max-width:990px;height:185px;opacity:0;box-shadow: -12.5px 12.5px hsla(0, 0%, 0%, 0.5)"
       ],
       "tiles/p2/p2UpNextTile.svg"
     ];
@@ -292,13 +295,28 @@ window.onload = function() {
   var p2TilesInput = {
     pNumber: 2,
     pTiles: [
-      p2ComicTileInput, p2HeaderTileInput, p2Tile1Input, p2Tile2Input, p2Tile3Input, p2UpNextTileInput
+      p2ComicTileInput,
+      p2HeaderTileInput,
+      p2Tile1Input,
+      p2Tile2Input,
+      p2Tile3Input,
+      p2UpNextTileInput
     ],
     pTilesObjects: [
-      0, 0, 0, 0, 0, 0
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
     ],
     pTilesIDs: [
-      0, 0, 0, 0, 0, 0
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
     ],
     classSelector: ".p2Content",
     bkgColor: "hsl(318, 75%, 75%)",
@@ -323,8 +341,6 @@ window.onload = function() {
     animation: p2Animation,
     initAnimation: true
   };
-
-
 
   //****** Functions *******//
   //**Content loader**//
@@ -365,6 +381,21 @@ window.onload = function() {
         })(i);
         xhr.open("GET", pTilesInput.pTiles[i][1], true);
         xhr.send();
+      }
+    }
+  }
+
+  //Calc tiles content heights
+  function tileHeightCalc(pageCalc) {
+    for (var i = 0; i < pageCalc.pTilesIDs.length; i++) {
+      if (pageCalc.pTiles[i][0][5] === "text/html") {
+        if (document.getElementById(pageCalc.pTiles[i][0][3]).contentDocument.getElementById(pageCalc.pTiles[i][2]) !== null) {
+          var contentID = document.getElementById(pageCalc.pTiles[i][0][3]).contentDocument.getElementById(pageCalc.pTiles[i][2]);
+          if (parseInt(contentID.style.minHeight) < contentID.clientHeight) {
+            document.getElementById(pageCalc.pTiles[i][0][3]).style.height = contentID.clientHeight + "px";
+            console.log(parseInt(contentID.style.minHeight));
+          }
+        }
       }
     }
   }
@@ -506,21 +537,29 @@ window.onload = function() {
       currentPage = toPage.pNumber;
 
       for (var i = 0; i < toPage.pTilesIDs.length; i++) {
-        toPage.pTilesIDs[i].style.display="block";
+        toPage.pTilesIDs[i].style.display = "block";
       }
 
       function packeryLayout() {
+        tileHeightCalc(toPage);
         var pckry = new Packery(".tileGridContainer", {
           itemSelector: toPage.clasSelector,
           gutter: 25
         });
+        function pckryLayoutReset() {
+          pckry.layout();
+        };
+        window.onresize = function(event) {
+          tileHeightCalc(toPage);
+          pckry.layout();
+        };
         for (var i; i < toPage.pTilesIDs.length; i++) {
           if (disappArr !== undefined) {
             pckry.remove(disappArr[i]);
           }
         }
+        tl.call(tileHeightCalc, [toPage], this, appearOffset + .1).call(pckryLayoutReset, [], this, appearOffset + .3);
       }
-
 
       var tl = new TimelineMax();
       var disappOffset;
@@ -556,6 +595,7 @@ window.onload = function() {
       }
       tl.call(packeryLayout, [], this, appearOffset).call(pageContentAppear, [toPage.pTilesIDs], this, appearOffset).call(terminateTL, [toPage.timeline], this, disappOffset).call(animate).call(flipped, [], flipDuration);
     }
+    return;
   }
 
   function pageContentDisappear(pageTiles) {

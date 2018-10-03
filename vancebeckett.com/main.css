@@ -11,7 +11,7 @@
   font-style: normal;
 }
 
-/* Scaling */
+
 /*
 @media screen and (min-width: 1491px) {
   html {
@@ -40,7 +40,16 @@ img {
 
 ol, ul {
   list-style-type: none;
-	padding-left: inherit;
+  padding-left: inherit;
+}
+
+button {
+  padding: 0;
+  border: none;
+  font: inherit;
+  color: inherit;
+  background-color: transparent;
+  cursor: pointer;
 }
 
 /* General */
@@ -55,21 +64,17 @@ body {
   /*
   height: 200px;
 */
-	display: flex;
-	flex-direction: column;
-	max-width: 1050px;
-	margin-left: auto;
-	margin-right: auto;
-	padding-top: 20px;
+  display: flex;
+  flex-direction: column;
+	justify-content: space-around;
+  max-width: 1050px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 20px;
 }
 
 header {
-  width: 1050px;
-}
-
-main {
-	margin: 40px auto 30px;
-	max-width: 1500px;
+  /* width: 1050px; */
 }
 
 h1, h3 {
@@ -90,14 +95,8 @@ p {
   word-spacing: -0.9px;
 }
 
-
-
-
-
 /* UI elements */
-
 /* Tiles */
-
 .tiles {
   background-color: hsl(0, 0%, 100%);
   box-shadow: -12.5px 12.5px hsla(0, 0%, 0%, 0.5);
@@ -106,46 +105,52 @@ p {
 }
 
 /* Navigation */
-
 #navTile {
-  width: 1050px;
+  width: 100%;
+  max-width: 1050px;
   height: 70px;
-	margin-left: auto;
-	margin-right: auto;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 #navLayout {
-	width: 950px;
-	display: flex;
-	flex-direction: row;
-	justify-content: space-around;
-	margin: auto;
-	margin-top: 23px;
+  max-width: 950px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  margin: auto;
+  margin-top: 23px;
 }
 
 .navButtons {
   font: 20px FranklinGothicURW-Hea, 'ArchivoBlackRegular', serif;
 }
 
-
 #navULineSVG {
   position: relative;
   left: 85px;
-	top: -12px;
+  top: -12px;
   height: 8px;
   width: 200px;
 }
 
-#navBtn1, #navBtn2, #navBtn4 {
+#navBtn1, #navBtn2, #navBtn3, #navBtn4, #navBtnMenu {
   cursor: pointer;
   color: hsl(0, 75%, 0%);
 }
 
-/* Main content layout */
+.mobileNavBttns {
+	text-align:center;
+}
 
+/* Main content layout */
 .tileGridContainer {
-  width: 990px;
-	margin-top: 40px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+  width: 100%;
+  max-width: 990px;
+  margin-top: 40px;
   margin-bottom: 30px;
 }
 
@@ -155,14 +160,9 @@ p {
   clear: both;
 }
 
-
-
-
-
 /*******************
 **     Pages      **
 *******************/
-
 /*
 .p1Content, .p2Content {
   display: none;
@@ -194,10 +194,42 @@ p {
   opacity: 0;
 }
 */
-
 /* Promise article tile */
 /* Doggie warning */
 /*******************
 * Page 2 Contents **
 *******************/
 /* Page 2 Comic tile*/
+
+
+/* Scaling */
+@media screen and (max-width: 1049px) {
+	#navTile {
+		width:100%;
+		max-width: 95%;
+	}
+  #navULineSVG, #navULineLine {
+    display: none;
+  }
+
+	.tileGridContainer {
+		width:90%;
+		margin-left:auto;
+		margin-right: auto;
+	}
+
+	.desktopNavBttns{
+		display:none;
+	}
+}
+
+@media screen and (min-width: 1050px) {
+	.mobileNavBttns {
+		display:none;
+	}
+	.tileGridContainer {
+		width:100%;
+		margin-left:auto;
+		margin-right: auto;
+	}
+}

@@ -77,72 +77,69 @@
     /* Tile style */
 
     body {
-      width: 989px;
-      height: 184px;
+      max-width: 990px;
+      height:100%;
+      height: 185px;
       background-color: white;
       -ms-overflow-style: none;
     }
 
-    #upNextTxt {
+    .webWorkBox {
+      width: available;
+      height: 170px;
+      /* position: relative; */
+      /* right: 0px; */
+      display: grid;
+      grid-template-columns: 165px auto;
+      grid-template-rows: 170px;
+      grid-template-areas:
+        "upNext nextPageHeader";
+    }
+
+    .upNextTxt {
       position: relative;
       top: 15px;
-      left: 27px;
+      right: 120px;
+      height: 150px;
       writing-mode: vertical-rl;
       text-orientation: mixed;
-      display: inline;
+      grid-column: 1;
+      grid-row: 1;
     }
 
-    #webWorkBox {
-      float: right;
-      background-color: hsl(196, 25%, 38%);
-      width: 825px;
-      height: 170px;
-      position:relative;
-      right:0px;
-    }
-
-    .pretxt {
+    .nextPageHeader {
       font: 20px FranklinGothicURW-Hea, 'ArchivoBlackRegular', sans-serif;
-      margin: 0;
-      padding: 0;
+      grid-column: 2;
+      grid-row: 1;
+      text-align: right;
     }
 
-    #WEBtxt {
-      float:right;
+    .nextPageHeaderRed {
       color: hsl(0, 75%, 70%);
       font-size: 125px;
-      line-height: 125px;
-      position:relative;
-      top:-15px;
-      right:2px;
-      height:126px;
-      width:265px;
+      line-height: 95px;
+      background-color: hsl(196, 25%, 38%);
+      /* position:relative;
+      bottom:15px; */
     }
 
-    #WORKtxt {
+    .nextPageHeaderWhite {
       color: hsl(0, 100%, 100%);
       font-size: 40px;
-      line-height: 40px;
-      position: absolute;
-      top: 61px;
-      right: 2px;
+      position: relative;
+      bottom: 4px;
+      right:3px;
+      place-self: center end;
     }
   </style>
 </head>
 
-<body>
-  <main id="UpnextContent">
-    <p id="upNextTxt">UP NEXT..</p>
-    <div id="webWorkBox">
-        <pre class="pretxt" id="WEBtxt">WEB</pre>
-        <pre class="pretxt" id="WORKtxt">WORK</pre>
-    </div>
-    <!--
-    <h1>Welcome and..</h1>
-    <p id="welcomeText">..Greetings! My name is <mark style="color:hsl(196, 25%, 38%);">Vance</mark>. I'm here to <mark style="color:hsl(0, 75%, 70%);">connect your business with customers</mark>. From zero to working website and/or webapp - just tell me about your problems, we will think them through. </p>
-    <p>Is that what you looking for?..</p>
-    <p id="welcomeAwesome">..Awesome!</p>
-  -->
+<body id="p1UpNextTileBody">
+  <main class="webWorkBox">
+    <p class="upNextTxt">UP NEXT..</p>
+    <!-- <p class="nextPageHeader">template</p> -->
+    <pre class="nextPageHeader nextPageHeaderRed">WEB</pre>
+    <pre class="nextPageHeader nextPageHeaderWhite">WORK</pre>
   </main>
 </body>
 

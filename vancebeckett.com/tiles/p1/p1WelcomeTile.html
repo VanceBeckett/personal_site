@@ -7,11 +7,12 @@
   <title>Welcome Tile</title>
   <link rel="stylesheet" type="text/css" href="../../MyFontsWebfontsKit.css" />
   <style>
-  .FranklinGothicURW-Hea {
-    font-family: FranklinGothicURW-Hea;
-    font-weight: normal;
-    font-style: normal;
-  }
+    .FranklinGothicURW-Hea {
+      font-family: FranklinGothicURW-Hea;
+      font-weight: normal;
+      font-style: normal;
+    }
+
     @font-face {
       font-family: 'ArchivoBlackRegular';
       src: url('../../fonts/ArchivoBlack-Regular.ttf') format('truetype');
@@ -54,6 +55,7 @@
 
     h2 {
       font-size: 28px;
+      line-height: 35px;
       margin-bottom: 25px;
     }
 
@@ -70,22 +72,23 @@
     /* Tile style */
 
     body {
-      width: 359px;
-      height: 479px;
+      max-width: 360px;
       background-color: white;
+      overflow: hidden;
       -ms-overflow-style: none;
     }
 
     #welcomeContent {
-      position: relative;
+      /* position: relative;
       top: 70px;
-      left: 49px;
-      width: 290px;
+      left: 49px; */
+      /* width: 290px; */
+      padding: 70px 20px 40px 50px;
+      max-width: 290px;
     }
 
     #welcomeText {
       text-align: justify;
-      width: 290px;
     }
 
     #welcomeAwesome {
@@ -93,18 +96,18 @@
       font-size: 28px;
       color: hsl(0, 75%, 70%);
       text-align: right;
-      width: 290px;
     }
   </style>
 </head>
 
-<body>
-  <main id="welcomeContent">
+<body id="p1WelcomeTileBody" style="min-height: 480px;">
+  <article id="welcomeContent">
     <h1>Welcome and..</h1>
-    <p id="welcomeText">..Greetings! My name is <mark style="color:hsl(196, 25%, 38%);">Vance</mark>. I'm here to <mark style="color:hsl(0, 75%, 70%);">connect your business with customers</mark>. From zero to working website and/or webapp - just tell me about your problems, we will think them through. </p>
+    <p id="welcomeText">..Greetings! My name is <mark style="color:hsl(196, 25%, 38%);">Vance</mark>. I'm here to <mark style="color:hsl(0, 75%, 70%);">connect your business with customers</mark>. From zero to working website and/or webapp - just
+      tell me about your problems, we will think them through. </p>
     <p>Is that what you looking for?..</p>
-    <p id="welcomeAwesome">..Awesome!</p>
-  </main>
+    <p id="welcomeAwesome" style="margin-bottom:0px;">..Awesome!</p>
+  </article>
 </body>
 
 </html>
