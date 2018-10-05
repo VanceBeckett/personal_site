@@ -1,4 +1,5 @@
-//TODO: search and replace dummies
+//TODO: code refactoring, outsource animations and styles
+
 //Layout status - what is loaded, load status, flipping animation status etc:
 var currentPage = 0;
 var flippingPage = false;
@@ -38,6 +39,9 @@ window.onload = function() {
   var tlp2cStar10 = new TimelineMax({delay: 1.2, repeat: -1, repeatDelay: 1.2});
   var tlp2cStar11 = new TimelineMax({delay: 0.7, repeat: -1, repeatDelay: 1.2});
 
+  //Page3 animation timelines
+  var tlp3C = new TimelineMax({delay: 0});
+
   //Page 1 animations
 
   //***Elements***//
@@ -51,49 +55,72 @@ window.onload = function() {
     navULineSVG = document.getElementById("navULineSVG");
 
   //Table of content button click event
-  var navButton1 = document.getElementById("navBtn1");
-  if (navButton1) {
-    navButton1.addEventListener("click", function() {
+  var navBtn1 = document.getElementById("navBtn1");
+  if (navBtn1) {
+    navBtn1.addEventListener("click", function() {
       pageLoader(p1TilesInput);
     }, false);
   } else {
-    navButton1.attachEvent("onclick", function() {
+    navBtn1.attachEvent("onclick", function() {
       pageLoader(p1TilesInput);
     }, false);
-  }
-  var navButton2 = document.getElementById("navBtn2");
-  if (navButton2) {
-    navButton2.addEventListener("click", function() {
+  };
+  var navBtn2 = document.getElementById("navBtn2");
+  if (navBtn2) {
+    navBtn2.addEventListener("click", function() {
       pageLoader(p2TilesInput);
     }, false);
   } else {
-    navButton2.attachEvent("onclick", function() {
+    navBtn2.attachEvent("onclick", function() {
       pageLoader(p2TilesInput);
     }, false);
-  }
-  var navButton4 = document.getElementById("navBtn4");
-  if (navButton4) {
-    navButton4.addEventListener("click", function() {
-      tlp1C.invalidate().restart().clear();
+  };
+  var navBtn3 = document.getElementById("navBtn3");
+  if (navBtn3) {
+    navBtn3.addEventListener("click", function() {
+      pageLoader(p3TilesInput);
     }, false);
   } else {
-    navButton4.attachEvent("onclick", function() {
-      tlp1C.invalidate().restart().clear();
+    navBtn3.attachEvent("onclick", function() {
+      pageLoader(p3TilesInput);
     }, false);
-  }
+  };
+  var navBtn4 = document.getElementById("navBtn4");
+  if (navBtn4) {
+    navBtn4.addEventListener("click", function() {
+      alert("Not ready yet, come in - literally - few days... or delete your cache?");
+    }, false);
+  } else {
+    navBtn4.attachEvent("onclick", function() {
+      alert("Not ready yet, come in - literally - few days... or delete your cache?");
+    }, false);
+  };
 
-  function p1UpNextButtonAction() {
-    var p1UpNextButton = document.getElementById("p1UpNextTile").contentDocument.getElementById("p1UpNextTileBody");
-    if (p1UpNextButton) {
-      p1UpNextButton.style.cursor = "pointer";
-      p1UpNextButton.addEventListener("click", function() {
-        pageLoader(p2TilesInput);
-      }, false);
-    } else {
-      p1UpNextButton.attachEvent("onclick", function() {
-        pageLoader(p2TilesInput);
-      }, false);
+  function pUpNextButtonAction(pNumber) {
+    switch (pNumber){
+      case 1:
+      var pUpNextButton = document.getElementById("p1UpNextTile").contentDocument.getElementById("p1UpNextTileBody");
+      var nextPage = p2TilesInput;
+      break;
+      case 2:
+      var pUpNextButton = document.getElementById("p2UpNextTile").contentDocument.getElementById("p2UpNextTileBody");
+      var nextPage = p3TilesInput;
+      break;
     }
+
+    if (pUpNextButton) {
+      pUpNextButton.style.cursor = "pointer";
+      pUpNextButton.addEventListener("click", function() {
+        pageLoader(nextPage);
+      }, false);
+      return
+    } else {
+      pUpNextButton.attachEvent("onclick", function() {
+        pageLoader(nextPage);
+      }, false);
+      return
+    }
+    return
   }
 
   //  Page content Elements
@@ -207,13 +234,14 @@ window.onload = function() {
         "id",
         "p2HeaderTile",
         "type",
-        "image/svg+xml",
+        "text/html",
         "data",
-        "tiles/p2/p2HeaderTile.svg",
+        "tiles/p2/p2HeaderTile.html",
         "style",
-        "display:none;width:100%;max-width:185px;height:440px;opacity:0;box-shadow: -12.5px 12.5px hsla(0, 0%, 0%, 0.5)"
+        "display:none;width:185px;max-width:185px;height:440px;opacity:0;box-shadow: -12.5px 12.5px hsla(0, 0%, 0%, 0.5)"
       ],
-      "tiles/p2/p2HeaderTile.svg"
+      "tiles/p2/p2HeaderTile.html",
+      "p2HeaderTileBody"
     ],
     p2Tile1Input = [
       [
@@ -281,6 +309,107 @@ window.onload = function() {
       ],
       "tiles/p2/p2UpNextTile.html"
     ];
+
+  var p3ComicTileInput = [
+        [
+          "class",
+          "p3Content",
+          "id",
+          "p3ComicTile",
+          "type",
+          "image/svg+xml",
+          "data",
+          "tiles/p3/p3Comic.svg",
+          "style",
+          "display:none;width:100%;max-width:780px;max-height:440px;opacity:0;box-shadow: -12.5px 12.5px hsla(0, 0%, 0%, 0.5)",
+          "alt",
+          "Page 3 of the comic shows our characters at the ascending the mountain. It's already night, their time is limited."
+        ],
+        "tiles/p3/p3Comic.svg",
+        "svg648"
+      ],
+      p3HeaderTileInput = [
+        [
+          "class",
+          "p3Content",
+          "id",
+          "p3HeaderTile",
+          "type",
+          "text/html",
+          "data",
+          "tiles/p3/p3HeaderTile.html",
+          "style",
+          "display:none;width:185px;max-width:185px;height:440px;opacity:0;box-shadow: -12.5px 12.5px hsla(0, 0%, 0%, 0.5)"
+        ],
+        "tiles/p3/p3HeaderTile.html",
+        "p2HeaderTileBody"
+      ],
+      p3Tile1Input = [
+        [
+          "class",
+          "p3Content",
+          "id",
+          "p3Tile1",
+          "type",
+          "text/html",
+          "data",
+          "tiles/p3/content/p3Tile1.html",
+          "style",
+          "display:none;width:100%;max-width:575px;min-height:330px;opacity:0;box-shadow: -12.5px 12.5px hsla(0, 0%, 0%, 0.5)",
+          "alt",
+          "Temporary dummy. This one will be filled with content soon."
+        ],
+        "tiles/p3/content/p3Tile1.html"
+      ],
+      p3Tile2Input = [
+        [
+          "class",
+          "p3Content",
+          "id",
+          "p3Tile2",
+          "type",
+          "text/html",
+          "data",
+          "tiles/p3/content/p3Tile2.html",
+          "style",
+          "display:none;width:100%;max-width:390px;min-height:685px;opacity:0;box-shadow: -12.5px 12.5px hsla(0, 0%, 0%, 0.5)",
+          "alt",
+          "Temporary dummy. This one will be filled with content soon."
+        ],
+        "tiles/p3/content/p3Tile2.html"
+      ],
+      p3Tile3Input = [
+        [
+          "class",
+          "p3Content",
+          "id",
+          "p3Tile3",
+          "type",
+          "text/html",
+          "data",
+          "tiles/p3/content/p3Tile3.html",
+          "style",
+          "display:none;width:100%;max-width:575px;min-height:330px;opacity:0;box-shadow: -12.5px 12.5px hsla(0, 0%, 0%, 0.5)",
+          "alt",
+          "Temporary dummy. This one will be filled with content soon."
+        ],
+        "tiles/p3/content/p3Tile3.html"
+      ],
+      p3UpNextTileInput = [
+        [
+          "class",
+          "p3Content",
+          "id",
+          "p3UpNextTile",
+          "type",
+          "text/html",
+          "data",
+          "tiles/p3/p3UpNextTile.html",
+          "style",
+          "display:none;width:100%;max-width:990px;height:185px;opacity:0;box-shadow: -12.5px 12.5px hsla(0, 0%, 0%, 0.5)"
+        ],
+        "tiles/p3/p3UpNextTile.html"
+      ];
 
   var redColor = "hsl(0, 75%, 70%)",
     blackColor = "hsl(0, 75%, 0%)";
@@ -358,6 +487,44 @@ window.onload = function() {
     initAnimation: true
   };
 
+  var p3TilesInput = {
+    pNumber: 3,
+    pTiles: [
+      p3ComicTileInput,
+      p3HeaderTileInput,
+      p3Tile1Input,
+      p3Tile2Input,
+      p3Tile3Input,
+      p3UpNextTileInput
+    ],
+    pTilesObjects: [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    pTilesIDs: [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    classSelector: ".p3Content",
+    bkgColor: "hsl(319, 25%, 38%)",
+    strongColor: "hsl(318, 25%, 38%)",
+    weakColor: "hsl(319, 25%, 38%)",
+    tocHighliterPosition: "530px",
+    timeline: [
+      tlp3C
+    ],
+    animation: p3Animation,
+    initAnimation: true
+  };
+
   //****** Functions *******//
   //**Content loader**//
   var initialLoad = false;
@@ -405,7 +572,7 @@ window.onload = function() {
   function tileHeightCalc(pageCalc) {
     for (var i = 0; i < pageCalc.pTilesIDs.length; i++) {
       if (pageCalc.pTiles[i][0][5] === "text/html") {
-        if (document.getElementById(pageCalc.pTiles[i][0][3]).contentDocument.getElementById(pageCalc.pTiles[i][2]) !== null) {
+        if (document.getElementById(pageCalc.pTiles[i][0][3]).contentDocument.getElementById(pageCalc.pTiles[i][2])) {
           var contentID = document.getElementById(pageCalc.pTiles[i][0][3]).contentDocument.getElementById(pageCalc.pTiles[i][2]);
           if (parseInt(contentID.style.minHeight) < contentID.clientHeight) {
             document.getElementById(pageCalc.pTiles[i][0][3]).style.height = contentID.clientHeight + "px";
@@ -534,7 +701,7 @@ window.onload = function() {
       flippingPage = true;
 
 
-//Scroll to top of the page
+      //Scroll to top of the page
       (function() {
         TweenMax.to(document.body, 1, {scrollTop: 0}); //For Safari
         TweenMax.to(document.documentElement, 1, {scrollTop: 0}); //For Chrome, Firefox, IE and Opera
@@ -569,7 +736,6 @@ window.onload = function() {
           itemSelector: toPage.clasSelector,
           gutter: 25
         });
-        p1UpNextButtonAction();
         function pckryLayoutReset() {
           pckry.layout();
         };
@@ -583,6 +749,8 @@ window.onload = function() {
           }
         }
         tl.call(tileHeightCalc, [toPage], this, appearOffset + .1).call(pckryLayoutReset, [], this, appearOffset + .3);
+        // .call(pUpNextButtonAction, [toPage.pNumber], this, appearOffset + 1)
+        pUpNextButtonAction(toPage.pNumber);
       }
 
       var tl = new TimelineMax();
@@ -1015,6 +1183,8 @@ window.onload = function() {
       }, "hairsEnd+=0.3");
     }
   }
+
+  //******Page 2 animations***************************************
 
   function p2Animation() {
     //Page 1 Tiles
@@ -1557,7 +1727,7 @@ window.onload = function() {
       },
       ease: Power2.easeInOut
     });
-*/
+    */
 
     /*
     tlp2C.to(tlp2CBez, 0.2 * tlp2CBez.duration(), {
@@ -1713,6 +1883,12 @@ window.onload = function() {
       opacity: 0
     }, "owlflap6-=0.2");
 
+  }
+
+  //******Page 3 animations***************************************
+
+  function p3Animation() {
+    return
   }
 
   pageLoader(p1TilesInput);

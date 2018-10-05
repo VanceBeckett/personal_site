@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-  <title>Up next tile</title>
+  <title>Header tile</title>
   <link rel="stylesheet" type="text/css" href="../../MyFontsWebfontsKit.css" />
   <style>
     .FranklinGothicURW-Hea {
@@ -77,49 +77,53 @@
     /* Tile style */
 
     body {
-      max-width: 990px;
+      max-width: 185px;
       /* height:100%; */
-      height: 185px;
+      height: 440px;
       background-color: white;
       overflow: hidden;
       -ms-overflow-style: none;
     }
 
     .webWorkBox {
+      float:right;
       width: available;
-      height: 170px;
+      height: 275px;
       /* position: relative; */
       /* right: 0px; */
       display: grid;
-      grid-template-columns: 165px auto;
-      grid-template-rows: 170px;
+      grid-template-columns: 170px;
+      grid-template-rows: 275px 165px;
       grid-template-areas:
-        "upNext nextPageHeader";
+        "nextPageHeader"
+        "something";
     }
 
     .upNextTxt {
       position: relative;
-      top: 15px;
-      right: 120px;
-      height: 150px;
-      writing-mode: vertical-rl;
-      text-orientation: mixed;
+      top: 120px;
+      right: 15px;
+      /* right: 120px;
+      height: 150px; */
+      text-align: right;
       grid-column: 1;
-      grid-row: 1;
+      grid-row: 2;
     }
 
     .nextPageHeader {
       font: 20px FranklinGothicURW-Hea, 'ArchivoBlackRegular', sans-serif;
-      grid-column: 2;
+      grid-column: 1;
       grid-row: 1;
       text-align: right;
     }
 
-    .nextPageHeaderMagenta {
-      color: hsl(318, 75%, 75%);
+    .nextPageHeaderBig {
+      color: hsl(319, 25%, 38%);
       font-size: 125px;
+      writing-mode: vertical-rl;
+      text-orientation: mixed;
       line-height: 95px;
-      background-color: hsl(319, 25%, 38%);
+      background-color: hsl(318, 75%, 75%);
       /* position:relative;
       bottom:15px; */
     }
@@ -127,19 +131,21 @@
     .nextPageHeaderWhite {
       color: hsl(0, 100%, 100%);
       font-size: 40px;
+      writing-mode: vertical-rl;
+      text-orientation: mixed;
       position: relative;
-      bottom: 4px;
-      right: 5px;
-      place-self: center end;
+      right: 57px;
+      bottom: 5px;
+      place-self: end end;
     }
   </style>
 </head>
 
-<body id="p2UpNextTileBody">
+<body id="p3HeaderTileBody">
   <main class="webWorkBox">
-    <p class="upNextTxt">UP NEXT..</p>
+    <p class="upNextTxt">SOME OF IT..</p>
     <!-- <p class="nextPageHeader">template</p> -->
-    <pre class="nextPageHeader nextPageHeaderMagenta">LOG</pre>
+    <pre class="nextPageHeader nextPageHeaderBig">LOG</pre>
     <pre class="nextPageHeader nextPageHeaderWhite">MY LIFE</pre>
   </main>
 </body>

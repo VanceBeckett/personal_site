@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>Content tile template</title>
+  <link rel="stylesheet" type="text/css" href="../../../MyFontsWebfontsKit.css" />
+  <style>
+    .FranklinGothicURW-Hea {
+      font-family: FranklinGothicURW-Hea;
+      font-weight: normal;
+      font-style: normal;
+    }
+
+    @font-face {
+      font-family: 'ArchivoBlackRegular';
+      src: url('../../../fonts/ArchivoBlack-Regular.ttf') format('truetype');
+      font-weight: normal;
+      font-style: normal;
+    }
+
+    /* Resetting default CSS properties */
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      font-weight: normal;
+      margin: 0;
+      padding: 0;
+    }
+
+    mark {
+      background: none;
+    }
+
+    img {
+      display: block;
+    }
+
+    body {
+      font: 20px FranklinGothicURW-Hea, 'ArchivoBlackRegular', sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    h1 {
+      font-size: 35px;
+      margin-bottom: 30px;
+    }
+
+    h2 {
+      font-size: 28px;
+      margin-bottom: 50px;
+    }
+
+    p,
+    pre {
+      margin: 0;
+      padding: 0;
+      margin-top: 10px;
+      margin-bottom: 10px;
+      font: 20px FranklinGothicURW-Hea, 'ArchivoBlackRegular', sans-serif;
+      font-size: 20px;
+      line-height: 22px;
+      word-spacing: -0.9px;
+      text-align: justify;
+    }
+
+    strong {
+      margin: 0;
+      padding: 0;
+      border: 0;
+      font: inherit;
+      font-size: 28px;
+    }
+
+    /* Tile style */
+
+    body {
+      width: 574px;
+      height: 329px;
+      background-color: white;
+    }
+
+    #p2Content3 {
+      position: relative;
+      float:right;
+      top: 55px;
+      right: 75px;
+      width: 465px;
+      display: grid;
+      grid-template-columns: 240px 50px 180px;
+      grid-template-areas:
+        "title title title"
+        "article . thumbnail"
+    }
+
+    #p2T3title {
+      grid-column-start: 1;
+      grid-column-end: fourth;
+      text-align: right;
+    }
+
+    #p2T3subtitle {
+      text-align: right;
+      grid-column: 1
+    }
+
+    #p2T3thumbnail {
+      width: 180px;
+      height: 170px;
+      background-color: hsl(0, 75%, 70%);
+      grid-column: 3
+    }
+
+    #p2T3txt {
+      text-align: justify;
+      grid-column: 1
+    }
+  </style>
+</head>
+
+<body>
+  <article id="p2Content3">
+    <h1 id="p2T3title">SOME TITLE HERE</h1>
+    <div id="p2T3txt">
+      <h2 id="p2T3subtitle">Some <mark style="color:hsl(0, 75%, 70%);">preface</mark>..</h2>
+      <p>Placeholder text for this tile. There would be some content and maybe a pop-up. Haven't decided yet..</p>
+    </div>
+    <div id="p2T3thumbnail"></div>
+  </article>
+</body>
+
+</html>
