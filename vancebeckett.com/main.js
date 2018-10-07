@@ -41,6 +41,25 @@ window.onload = function() {
 
   //Page3 animation timelines
   var tlp3C = new TimelineMax({delay: 0});
+  var tlp3CRipples = new TimelineMax({delay: 0});
+  var tlp3CTreeSwaying = new TimelineMax({delay: 0});
+  // stars
+  var tlp3cStar1 = new TimelineMax({delay: 0, repeat: -1, repeatDelay: 1.2});
+  var tlp3cStar2 = new TimelineMax({delay: 0.5, repeat: -1, repeatDelay: 1.2});
+  var tlp3cStar3 = new TimelineMax({delay: 0.3, repeat: -1, repeatDelay: 1.2});
+  var tlp3cStar4 = new TimelineMax({delay: 1, repeat: -1, repeatDelay: 1.2});
+  var tlp3cStar5 = new TimelineMax({delay: 0.4, repeat: -1, repeatDelay: 1.2});
+  var tlp3cStar6 = new TimelineMax({delay: 0.8, repeat: -1, repeatDelay: 1.2});
+  var tlp3cStar7 = new TimelineMax({delay: 0.1, repeat: -1, repeatDelay: 1.2});
+  var tlp3cStar8 = new TimelineMax({delay: 0.7, repeat: -1, repeatDelay: 1.2});
+  // reflected stars
+  var tlp3cStar1w = new TimelineMax({delay: 0, repeat: -1, repeatDelay: 1.2});
+  var tlp3cStar2w = new TimelineMax({delay: 0.5, repeat: -1, repeatDelay: 1.2});
+  var tlp3cStar3w = new TimelineMax({delay: 0.3, repeat: -1, repeatDelay: 1.2});
+  var tlp3cStar4w = new TimelineMax({delay: 1, repeat: -1, repeatDelay: 1.2});
+  var tlp3cStar5w = new TimelineMax({delay: 0.4, repeat: -1, repeatDelay: 1.2});
+  var tlp3cStar6w = new TimelineMax({delay: 0.8, repeat: -1, repeatDelay: 1.2});
+  var tlp3cStar7w = new TimelineMax({delay: 0.1, repeat: -1, repeatDelay: 1.2});
 
   //Page 1 animations
 
@@ -97,15 +116,15 @@ window.onload = function() {
   };
 
   function pUpNextButtonAction(pNumber) {
-    switch (pNumber){
+    switch (pNumber) {
       case 1:
-      var pUpNextButton = document.getElementById("p1UpNextTile").contentDocument.getElementById("p1UpNextTileBody");
-      var nextPage = p2TilesInput;
-      break;
+        var pUpNextButton = document.getElementById("p1UpNextTile").contentDocument.getElementById("p1UpNextTileBody");
+        var nextPage = p2TilesInput;
+        break;
       case 2:
-      var pUpNextButton = document.getElementById("p2UpNextTile").contentDocument.getElementById("p2UpNextTileBody");
-      var nextPage = p3TilesInput;
-      break;
+        var pUpNextButton = document.getElementById("p2UpNextTile").contentDocument.getElementById("p2UpNextTileBody");
+        var nextPage = p3TilesInput;
+        break;
     }
 
     if (pUpNextButton) {
@@ -311,105 +330,105 @@ window.onload = function() {
     ];
 
   var p3ComicTileInput = [
-        [
-          "class",
-          "p3Content",
-          "id",
-          "p3ComicTile",
-          "type",
-          "image/svg+xml",
-          "data",
-          "tiles/p3/p3Comic.svg",
-          "style",
-          "display:none;width:100%;max-width:780px;max-height:440px;opacity:0;box-shadow: -12.5px 12.5px hsla(0, 0%, 0%, 0.5)",
-          "alt",
-          "Page 3 of the comic shows our characters at the ascending the mountain. It's already night, their time is limited."
-        ],
+      [
+        "class",
+        "p3Content",
+        "id",
+        "p3ComicTile",
+        "type",
+        "image/svg+xml",
+        "data",
         "tiles/p3/p3Comic.svg",
-        "svg648"
+        "style",
+        "display:none;width:100%;max-width:780px;max-height:440px;opacity:0;box-shadow: -12.5px 12.5px hsla(0, 0%, 0%, 0.5)",
+        "alt",
+        "Page 3 of the comic shows our characters at the ascending the mountain. It's already night, their time is limited."
       ],
-      p3HeaderTileInput = [
-        [
-          "class",
-          "p3Content",
-          "id",
-          "p3HeaderTile",
-          "type",
-          "text/html",
-          "data",
-          "tiles/p3/p3HeaderTile.html",
-          "style",
-          "display:none;width:185px;max-width:185px;height:440px;opacity:0;box-shadow: -12.5px 12.5px hsla(0, 0%, 0%, 0.5)"
-        ],
+      "tiles/p3/p3Comic.svg",
+      "svg648"
+    ],
+    p3HeaderTileInput = [
+      [
+        "class",
+        "p3Content",
+        "id",
+        "p3HeaderTile",
+        "type",
+        "text/html",
+        "data",
         "tiles/p3/p3HeaderTile.html",
-        "p2HeaderTileBody"
+        "style",
+        "display:none;width:185px;max-width:185px;height:440px;opacity:0;box-shadow: -12.5px 12.5px hsla(0, 0%, 0%, 0.5)"
       ],
-      p3Tile1Input = [
-        [
-          "class",
-          "p3Content",
-          "id",
-          "p3Tile1",
-          "type",
-          "text/html",
-          "data",
-          "tiles/p3/content/p3Tile1.html",
-          "style",
-          "display:none;width:100%;max-width:575px;min-height:330px;opacity:0;box-shadow: -12.5px 12.5px hsla(0, 0%, 0%, 0.5)",
-          "alt",
-          "Temporary dummy. This one will be filled with content soon."
-        ],
-        "tiles/p3/content/p3Tile1.html"
+      "tiles/p3/p3HeaderTile.html",
+      "p2HeaderTileBody"
+    ],
+    p3Tile1Input = [
+      [
+        "class",
+        "p3Content",
+        "id",
+        "p3Tile1",
+        "type",
+        "text/html",
+        "data",
+        "tiles/p3/content/p3Tile1.html",
+        "style",
+        "display:none;width:100%;max-width:575px;min-height:330px;opacity:0;box-shadow: -12.5px 12.5px hsla(0, 0%, 0%, 0.5)",
+        "alt",
+        "Temporary dummy. This one will be filled with content soon."
       ],
-      p3Tile2Input = [
-        [
-          "class",
-          "p3Content",
-          "id",
-          "p3Tile2",
-          "type",
-          "text/html",
-          "data",
-          "tiles/p3/content/p3Tile2.html",
-          "style",
-          "display:none;width:100%;max-width:390px;min-height:685px;opacity:0;box-shadow: -12.5px 12.5px hsla(0, 0%, 0%, 0.5)",
-          "alt",
-          "Temporary dummy. This one will be filled with content soon."
-        ],
-        "tiles/p3/content/p3Tile2.html"
+      "tiles/p3/content/p3Tile1.html"
+    ],
+    p3Tile2Input = [
+      [
+        "class",
+        "p3Content",
+        "id",
+        "p3Tile2",
+        "type",
+        "text/html",
+        "data",
+        "tiles/p3/content/p3Tile2.html",
+        "style",
+        "display:none;width:100%;max-width:390px;min-height:685px;opacity:0;box-shadow: -12.5px 12.5px hsla(0, 0%, 0%, 0.5)",
+        "alt",
+        "Temporary dummy. This one will be filled with content soon."
       ],
-      p3Tile3Input = [
-        [
-          "class",
-          "p3Content",
-          "id",
-          "p3Tile3",
-          "type",
-          "text/html",
-          "data",
-          "tiles/p3/content/p3Tile3.html",
-          "style",
-          "display:none;width:100%;max-width:575px;min-height:330px;opacity:0;box-shadow: -12.5px 12.5px hsla(0, 0%, 0%, 0.5)",
-          "alt",
-          "Temporary dummy. This one will be filled with content soon."
-        ],
-        "tiles/p3/content/p3Tile3.html"
+      "tiles/p3/content/p3Tile2.html"
+    ],
+    p3Tile3Input = [
+      [
+        "class",
+        "p3Content",
+        "id",
+        "p3Tile3",
+        "type",
+        "text/html",
+        "data",
+        "tiles/p3/content/p3Tile3.html",
+        "style",
+        "display:none;width:100%;max-width:575px;min-height:330px;opacity:0;box-shadow: -12.5px 12.5px hsla(0, 0%, 0%, 0.5)",
+        "alt",
+        "Temporary dummy. This one will be filled with content soon."
       ],
-      p3UpNextTileInput = [
-        [
-          "class",
-          "p3Content",
-          "id",
-          "p3UpNextTile",
-          "type",
-          "text/html",
-          "data",
-          "tiles/p3/p3UpNextTile.html",
-          "style",
-          "display:none;width:100%;max-width:990px;height:185px;opacity:0;box-shadow: -12.5px 12.5px hsla(0, 0%, 0%, 0.5)"
-        ],
-        "tiles/p3/p3UpNextTile.html"
-      ];
+      "tiles/p3/content/p3Tile3.html"
+    ],
+    p3UpNextTileInput = [
+      [
+        "class",
+        "p3Content",
+        "id",
+        "p3UpNextTile",
+        "type",
+        "text/html",
+        "data",
+        "tiles/p3/p3UpNextTile.html",
+        "style",
+        "display:none;width:100%;max-width:990px;height:185px;opacity:0;box-shadow: -12.5px 12.5px hsla(0, 0%, 0%, 0.5)"
+      ],
+      "tiles/p3/p3UpNextTile.html"
+    ];
 
   var redColor = "hsl(0, 75%, 70%)",
     blackColor = "hsl(0, 75%, 0%)";
@@ -519,7 +538,24 @@ window.onload = function() {
     weakColor: "hsl(319, 25%, 38%)",
     tocHighliterPosition: "530px",
     timeline: [
-      tlp3C
+      tlp3C,
+      tlp3CRipples,
+      tlp3CTreeSwaying,
+      tlp3cStar1,
+      tlp3cStar2,
+      tlp3cStar3,
+      tlp3cStar4,
+      tlp3cStar5,
+      tlp3cStar6,
+      tlp3cStar7,
+      tlp3cStar8,
+      tlp3cStar1w,
+      tlp3cStar2w,
+      tlp3cStar3w,
+      tlp3cStar4w,
+      tlp3cStar5w,
+      tlp3cStar6w,
+      tlp3cStar7w
     ],
     animation: p3Animation,
     initAnimation: true
@@ -576,7 +612,6 @@ window.onload = function() {
           var contentID = document.getElementById(pageCalc.pTiles[i][0][3]).contentDocument.getElementById(pageCalc.pTiles[i][2]);
           if (parseInt(contentID.style.minHeight) < contentID.clientHeight) {
             document.getElementById(pageCalc.pTiles[i][0][3]).style.height = contentID.clientHeight + "px";
-            console.log(parseInt(contentID.style.minHeight));
           }
         }
       }
@@ -624,6 +659,10 @@ window.onload = function() {
   }
 
   var randomRotationReturn = [
+    0,
+    0,
+    0,
+    0,
     0,
     0,
     0,
@@ -700,7 +739,6 @@ window.onload = function() {
     if (toPage.pNumber !== currentPage && flippingPage !== true) {
       flippingPage = true;
 
-
       //Scroll to top of the page
       (function() {
         TweenMax.to(document.body, 1, {scrollTop: 0}); //For Safari
@@ -751,6 +789,7 @@ window.onload = function() {
         tl.call(tileHeightCalc, [toPage], this, appearOffset + .1).call(pckryLayoutReset, [], this, appearOffset + .3);
         // .call(pUpNextButtonAction, [toPage.pNumber], this, appearOffset + 1)
         pUpNextButtonAction(toPage.pNumber);
+        // tl.call(pUpNextButton, [toPage.pNumber], this, "+=1");
       }
 
       var tl = new TimelineMax();
@@ -1888,8 +1927,420 @@ window.onload = function() {
   //******Page 3 animations***************************************
 
   function p3Animation() {
-    return
-  }
 
+    //Page 3 Comic Tile
+    var p3ComicTile = document.getElementById("p3ComicTile"),
+      p3ComicSVG = p3ComicTile.contentDocument;
+
+    function p3ComicSVGid(id) {
+      return p3ComicSVG.getElementById(id);
+    }
+
+    //Water distortion
+    var turbwave = p3ComicSVGid("turbwave")
+    tlp3CRipples.to(turbwave, 8, {
+      attr: {
+        "baseFrequency": 0.04
+      },
+      repeat: -1,
+      yoyo: true
+    });
+
+    var p3ComicTileMoon = p3ComicSVGid("p3ComicTileMoon");
+
+    //Stars
+    var p3ComicTileStar1g = p3ComicSVGid("p3ComicTileStar1g"),
+      p3ComicTileStar2g = p3ComicSVGid("p3ComicTileStar2g"),
+      p3ComicTileStar3g = p3ComicSVGid("p3ComicTileStar3g"),
+      p3ComicTileStar4g = p3ComicSVGid("p3ComicTileStar4g"),
+      p3ComicTileStar5g = p3ComicSVGid("p3ComicTileStar5g"),
+      p3ComicTileStar6g = p3ComicSVGid("p3ComicTileStar6g"),
+      p3ComicTileStar7g = p3ComicSVGid("p3ComicTileStar7g"),
+      p3ComicTileStar8g = p3ComicSVGid("p3ComicTileStar8g");
+    // reflected Stars
+    var p3ComicTileStar1wg = p3ComicSVGid("p3ComicTileStar1wg"),
+      p3ComicTileStar2wg = p3ComicSVGid("p3ComicTileStar2wg"),
+      p3ComicTileStar3wg = p3ComicSVGid("p3ComicTileStar3wg"),
+      p3ComicTileStar4wg = p3ComicSVGid("p3ComicTileStar4wg"),
+      p3ComicTileStar5wg = p3ComicSVGid("p3ComicTileStar5wg"),
+      p3ComicTileStar6wg = p3ComicSVGid("p3ComicTileStar6wg"),
+      p3ComicTileStar7wg = p3ComicSVGid("p3ComicTileStar7wg");
+    // shadows
+    var p3ComicTileTreeRootL0 = p3ComicSVGid("p3ComicTileTreeRootL0"),
+      p3ComicTileTreeRootL1 = p3ComicSVGid("p3ComicTileTreeRootL1"),
+      p3ComicTileTreeRootB0 = p3ComicSVGid("p3ComicTileTreeRootB0"),
+      p3ComicTileTreeRootB1 = p3ComicSVGid("p3ComicTileTreeRootB1"),
+      p3ComicTileTreeRootR0 = p3ComicSVGid("p3ComicTileTreeRootR0"),
+      p3ComicTileTreeRootR1 = p3ComicSVGid("p3ComicTileTreeRootR1"),
+      p3ComicTileTreeShadow0 = p3ComicSVGid("p3ComicTileTreeShadow0"),
+      p3ComicTileTreeShadow1 = p3ComicSVGid("p3ComicTileTreeShadow1"),
+      p3ComicWolfShadow0 = p3ComicSVGid("p3ComicWolfShadow0"),
+      p3ComicWolfShadow1 = p3ComicSVGid("p3ComicWolfShadow1");
+    // tree
+    var p3ComicTileTreeBranchLeftCroneASnow0 = p3ComicSVGid("p3ComicTileTreeBranchLeftCroneASnow0"),
+      p3ComicTileTreeBranchLeftCroneASnow1 = p3ComicSVGid("p3ComicTileTreeBranchLeftCroneASnow1"),
+      p3ComicTileTreeTrunk0Crone0 = p3ComicSVGid("p3ComicTileTreeTrunk0Crone0"),
+      p3ComicTileTreeTrunk0Crone1 = p3ComicSVGid("p3ComicTileTreeTrunk0Crone1"),
+      p3ComicTileTreeTrunk0Crone0SnowB0 = p3ComicSVGid("p3ComicTileTreeTrunk0Crone0SnowB0"),
+      p3ComicTileTreeTrunk0Crone0SnowB1 = p3ComicSVGid("p3ComicTileTreeTrunk0Crone0SnowB1"),
+      p3ComicTileTreeBranchLeftCroneA0 = p3ComicSVGid("p3ComicTileTreeBranchLeftCroneA0"),
+      p3ComicTileTreeBranchLeftCroneA1 = p3ComicSVGid("p3ComicTileTreeBranchLeftCroneA1"),
+      p3ComicTileTreeBranchLeftCroneB0 = p3ComicSVGid("p3ComicTileTreeBranchLeftCroneB0"),
+      p3ComicTileTreeBranchLeftCroneB1 = p3ComicSVGid("p3ComicTileTreeBranchLeftCroneB1"),
+      p3ComicTileTreeBranchLeftCroneCBranchA0 = p3ComicSVGid("p3ComicTileTreeBranchLeftCroneCBranchA0"),
+      p3ComicTileTreeBranchLeftCroneCBranchA1 = p3ComicSVGid("p3ComicTileTreeBranchLeftCroneCBranchA1"),
+      p3ComicTileTreeBranchLeftCroneCBranchB0 = p3ComicSVGid("p3ComicTileTreeBranchLeftCroneCBranchB0"),
+      p3ComicTileTreeBranchLeftCroneCBranchB1 = p3ComicSVGid("p3ComicTileTreeBranchLeftCroneCBranchB1"),
+      p3ComicTileTreeBranchUpper0 = p3ComicSVGid("p3ComicTileTreeBranchUpper0"),
+      p3ComicTileTreeBranchUpper1 = p3ComicSVGid("p3ComicTileTreeBranchUpper1"),
+      p3ComicTileTreeBranchUpperA0 = p3ComicSVGid("p3ComicTileTreeBranchUpperA0"),
+      p3ComicTileTreeBranchUpperA1 = p3ComicSVGid("p3ComicTileTreeBranchUpperA1"),
+      p3ComicTileTreeBranchUpperSnow0 = p3ComicSVGid("p3ComicTileTreeBranchUpperSnow0"),
+      p3ComicTileTreeBranchUpperSnow1 = p3ComicSVGid("p3ComicTileTreeBranchUpperSnow1"),
+      p3ComicTileTreeBranchBottomB0 = p3ComicSVGid("p3ComicTileTreeBranchBottomB0"),
+      p3ComicTileTreeBranchBottomB1 = p3ComicSVGid("p3ComicTileTreeBranchBottomB1"),
+      p3ComicTileTreeBranchBottomC0 = p3ComicSVGid("p3ComicTileTreeBranchBottomC0"),
+      p3ComicTileTreeBranchBottomC1 = p3ComicSVGid("p3ComicTileTreeBranchBottomC1"),
+      p3ComicTileTreeBranchBottomBSnow0 = p3ComicSVGid("p3ComicTileTreeBranchBottomBSnow0"),
+      p3ComicTileTreeBranchBottomBSnow1 = p3ComicSVGid("p3ComicTileTreeBranchBottomBSnow1"),
+      p3ComicTileTreeBranchBottomCSnow0 = p3ComicSVGid("p3ComicTileTreeBranchBottomCSnow0"),
+      p3ComicTileTreeBranchBottomCSnow1 = p3ComicSVGid("p3ComicTileTreeBranchBottomCSnow1"),
+      p3ComicTileTreeTrunk0 = p3ComicSVGid("p3ComicTileTreeTrunk0"),
+      p3ComicTileTreeTrunk1 = p3ComicSVGid("p3ComicTileTreeTrunk1"),
+      p3ComicTileTreeBranchLeft0 = p3ComicSVGid("p3ComicTileTreeBranchLeft0"),
+      p3ComicTileTreeBranchLeft1 = p3ComicSVGid("p3ComicTileTreeBranchLeft1"),
+      p3ComicTileTreeBranchLeftCroneABranchA0 = p3ComicSVGid("p3ComicTileTreeBranchLeftCroneABranchA0"),
+      p3ComicTileTreeBranchLeftCroneABranchA1 = p3ComicSVGid("p3ComicTileTreeBranchLeftCroneABranchA1"),
+      p3ComicTileTreeBranchLeftCroneBBranchA0 = p3ComicSVGid("p3ComicTileTreeBranchLeftCroneBBranchA0"),
+      p3ComicTileTreeBranchLeftCroneBBranchA1 = p3ComicSVGid("p3ComicTileTreeBranchLeftCroneBBranchA1"),
+      p3ComicTileTreeTrunk0Crone1BranchA0 = p3ComicSVGid("p3ComicTileTreeTrunk0Crone1BranchA0"),
+      p3ComicTileTreeTrunk0Crone1BranchA1 = p3ComicSVGid("p3ComicTileTreeTrunk0Crone1BranchA1"),
+      p3ComicTileTreeTrunk0Crone1BranchB0 = p3ComicSVGid("p3ComicTileTreeTrunk0Crone1BranchB0"),
+      p3ComicTileTreeTrunk0Crone1BranchB1 = p3ComicSVGid("p3ComicTileTreeTrunk0Crone1BranchB1"),
+      p3ComicTileTreeTrunk0Crone1BranchC0 = p3ComicSVGid("p3ComicTileTreeTrunk0Crone1BranchC0"),
+      p3ComicTileTreeTrunk0Crone1BranchC1 = p3ComicSVGid("p3ComicTileTreeTrunk0Crone1BranchC1"),
+      p3ComicTileTreeTrunkSnow0 = p3ComicSVGid("p3ComicTileTreeTrunkSnow0"),
+      p3ComicTileTreeTrunkSnow1 = p3ComicSVGid("p3ComicTileTreeTrunkSnow1"),
+      p3ComicTileTreeBranchLeftSnowA0 = p3ComicSVGid("p3ComicTileTreeBranchLeftSnowA0"),
+      p3ComicTileTreeBranchLeftSnowA1 = p3ComicSVGid("p3ComicTileTreeBranchLeftSnowA1"),
+      p3ComicTileTreeBranchLeftCroneBBranchB0 = p3ComicSVGid("p3ComicTileTreeBranchLeftCroneBBranchB0"),
+      p3ComicTileTreeBranchLeftCroneBBranchB1 = p3ComicSVGid("p3ComicTileTreeBranchLeftCroneBBranchB1"),
+      p3ComicTileTreeBranchLeftCroneABranchB0 = p3ComicSVGid("p3ComicTileTreeBranchLeftCroneABranchB0"),
+      p3ComicTileTreeBranchLeftCroneABranchB1 = p3ComicSVGid("p3ComicTileTreeBranchLeftCroneABranchB1"),
+      p3ComicTileTreeTrunk0Crone0SnowA0 = p3ComicSVGid("p3ComicTileTreeTrunk0Crone0SnowA0"),
+      p3ComicTileTreeTrunk0Crone0SnowA1 = p3ComicSVGid("p3ComicTileTreeTrunk0Crone0SnowA1"),
+      p3ComicTileTreeBranchLeftCroneC0 = p3ComicSVGid("p3ComicTileTreeBranchLeftCroneC0"),
+      p3ComicTileTreeBranchLeftCroneC1 = p3ComicSVGid("p3ComicTileTreeBranchLeftCroneC1"),
+      p3ComicTileTreeBranchLeftCroneCSnow0 = p3ComicSVGid("p3ComicTileTreeBranchLeftCroneCSnow0"),
+      p3ComicTileTreeBranchLeftCroneCSnow1 = p3ComicSVGid("p3ComicTileTreeBranchLeftCroneCSnow1"),
+      p3ComicTileTreeBranchLeftCroneCBranchBSnow0 = p3ComicSVGid("p3ComicTileTreeBranchLeftCroneCBranchBSnow0"),
+      p3ComicTileTreeBranchLeftCroneCBranchBSnow1 = p3ComicSVGid("p3ComicTileTreeBranchLeftCroneCBranchBSnow1"),
+      p3ComicTileTreeBranchLeftSnowB0 = p3ComicSVGid("p3ComicTileTreeBranchLeftSnowB0"),
+      p3ComicTileTreeBranchLeftSnowB1 = p3ComicSVGid("p3ComicTileTreeBranchLeftSnowB1");
+    // chat
+    var p3ComicChat1Box = p3ComicSVGid("p3ComicChat1Box"),
+      p3ComicChat1Ico = p3ComicSVGid("p3ComicChat1Ico"),
+      p3ComicChat2Box = p3ComicSVGid("p3ComicChat2Box"),
+      p3ComicChat2Ico = p3ComicSVGid("p3ComicChat2Ico");
+    // wolf
+    var p3ComicWolfBody1 = p3ComicSVGid("p3ComicWolfBody1"),
+      p3ComicWolfBody2 = p3ComicSVGid("p3ComicWolfBody2"),
+      p3ComicWolfShadow2 = p3ComicSVGid("p3ComicWolfShadow2"),
+      p3ComicWolfBody3 = p3ComicSVGid("p3ComicWolfBody3"),
+      p3ComicWolfShadow3 = p3ComicSVGid("p3ComicWolfShadow3"),
+      p3ComicWolfBody4 = p3ComicSVGid("p3ComicWolfBody4"),
+      p3ComicWolfShadow4 = p3ComicSVGid("p3ComicWolfShadow4");
+
+    var treeElements = [
+      p3ComicTileTreeBranchLeftCroneASnow0,
+      p3ComicTileTreeBranchLeftCroneASnow1,
+      p3ComicTileTreeTrunk0Crone0,
+      p3ComicTileTreeTrunk0Crone1,
+      p3ComicTileTreeTrunk0Crone0SnowB0,
+      p3ComicTileTreeTrunk0Crone0SnowB1,
+      p3ComicTileTreeBranchLeftCroneA0,
+      p3ComicTileTreeBranchLeftCroneA1,
+      p3ComicTileTreeBranchLeftCroneB0,
+      p3ComicTileTreeBranchLeftCroneB1,
+      p3ComicTileTreeBranchLeftCroneCBranchA0,
+      p3ComicTileTreeBranchLeftCroneCBranchA1,
+      p3ComicTileTreeBranchLeftCroneCBranchB0,
+      p3ComicTileTreeBranchLeftCroneCBranchB1,
+      p3ComicTileTreeBranchUpper0,
+      p3ComicTileTreeBranchUpper1,
+      p3ComicTileTreeBranchUpperA0,
+      p3ComicTileTreeBranchUpperA1,
+      p3ComicTileTreeBranchUpperSnow0,
+      p3ComicTileTreeBranchUpperSnow1,
+      p3ComicTileTreeBranchBottomB0,
+      p3ComicTileTreeBranchBottomB1,
+      p3ComicTileTreeBranchBottomC0,
+      p3ComicTileTreeBranchBottomC1,
+      p3ComicTileTreeBranchBottomBSnow0,
+      p3ComicTileTreeBranchBottomBSnow1,
+      p3ComicTileTreeBranchBottomCSnow0,
+      p3ComicTileTreeBranchBottomCSnow1,
+      p3ComicTileTreeTrunk0,
+      p3ComicTileTreeTrunk1,
+      p3ComicTileTreeBranchLeft0,
+      p3ComicTileTreeBranchLeft1,
+      p3ComicTileTreeBranchLeftCroneABranchA0,
+      p3ComicTileTreeBranchLeftCroneABranchA1,
+      p3ComicTileTreeBranchLeftCroneBBranchA0,
+      p3ComicTileTreeBranchLeftCroneBBranchA1,
+      p3ComicTileTreeTrunk0Crone1BranchA0,
+      p3ComicTileTreeTrunk0Crone1BranchA1,
+      p3ComicTileTreeTrunk0Crone1BranchB0,
+      p3ComicTileTreeTrunk0Crone1BranchB1,
+      p3ComicTileTreeTrunk0Crone1BranchC0,
+      p3ComicTileTreeTrunk0Crone1BranchC1,
+      p3ComicTileTreeTrunkSnow0,
+      p3ComicTileTreeTrunkSnow1,
+      p3ComicTileTreeBranchLeftSnowA0,
+      p3ComicTileTreeBranchLeftSnowA1,
+      p3ComicTileTreeBranchLeftCroneBBranchB0,
+      p3ComicTileTreeBranchLeftCroneBBranchB1,
+      p3ComicTileTreeBranchLeftCroneABranchB0,
+      p3ComicTileTreeBranchLeftCroneABranchB1,
+      p3ComicTileTreeTrunk0Crone0SnowA0,
+      p3ComicTileTreeTrunk0Crone0SnowA1,
+      p3ComicTileTreeBranchLeftCroneC0,
+      p3ComicTileTreeBranchLeftCroneC1,
+      p3ComicTileTreeBranchLeftCroneCSnow0,
+      p3ComicTileTreeBranchLeftCroneCSnow1,
+      p3ComicTileTreeBranchLeftCroneCBranchBSnow0,
+      p3ComicTileTreeBranchLeftCroneCBranchBSnow1,
+      p3ComicTileTreeBranchLeftSnowB0,
+      p3ComicTileTreeBranchLeftSnowB1
+    ];
+
+    function starAnimTo(star, number) {
+      var rnd = randomRotation(60, 25, number);
+      var webkit = rnd + " " + randomScale(0.6, 0.3);
+      var others = rnd;
+      TweenMax.to(star, 1.2, {
+        css: {
+          "-webkit-transform": webkit,
+          "-moz-transform": others,
+          "-o-transform": others
+        }
+      });
+    }
+
+    //          "-ms-transform": others,
+
+    function starAnimFrom(star, number) {
+      var rnd = randomRotationReturn[number];
+      var webkit = "rotate(" + rnd + "deg) scale(1)";
+      var others = "rotate(" + rnd + "deg)";
+      TweenMax.to(star, 1.2, {
+        css: {
+          "-webkit-transform": webkit,
+          "-moz-transform": others,
+          "-o-transform": others
+        }
+      });
+    }
+
+    function p3CStarsLoop() {
+      // stars
+      tlp3cStar1.play().call(starAnimTo, [
+        p3ComicTileStar1g, 0
+      ], this, "start").call(starAnimFrom, [
+        p3ComicTileStar1g, 0
+      ], this, "start+=1.2");
+      tlp3cStar2.play().call(starAnimTo, [
+        p3ComicTileStar2g, 1
+      ], this, "start").call(starAnimFrom, [
+        p3ComicTileStar2g, 1
+      ], this, "start+=1.2");
+      tlp3cStar3.play().call(starAnimTo, [
+        p3ComicTileStar3g, 2
+      ], this, "start").call(starAnimFrom, [
+        p3ComicTileStar3g, 2
+      ], this, "start+=1.2");
+      tlp3cStar4.play().call(starAnimTo, [
+        p3ComicTileStar4g, 3
+      ], this, "start").call(starAnimFrom, [
+        p3ComicTileStar4g, 3
+      ], this, "start+=1.2");
+      tlp3cStar5.play().call(starAnimTo, [
+        p3ComicTileStar5g, 4
+      ], this, "start").call(starAnimFrom, [
+        p3ComicTileStar5g, 4
+      ], this, "start+=1.2");
+      tlp3cStar6.play().call(starAnimTo, [
+        p3ComicTileStar6g, 5
+      ], this, "start").call(starAnimFrom, [
+        p3ComicTileStar6g, 5
+      ], this, "start+=1.2");
+      tlp3cStar7.play().call(starAnimTo, [
+        p3ComicTileStar7g, 6
+      ], this, "start").call(starAnimFrom, [
+        p3ComicTileStar7g, 6
+      ], this, "start+=1.2");
+      tlp3cStar8.play().call(starAnimTo, [
+        p3ComicTileStar8g, 7
+      ], this, "start").call(starAnimFrom, [
+        p3ComicTileStar8g, 7
+      ], this, "start+=1.2");
+      // reflected stars
+      tlp3cStar1w.play().call(starAnimTo, [
+        p3ComicTileStar1wg, 8
+      ], this, "start").call(starAnimFrom, [
+        p3ComicTileStar1wg, 8
+      ], this, "start+=1.2");
+      tlp3cStar2w.play().call(starAnimTo, [
+        p3ComicTileStar2wg, 9
+      ], this, "start").call(starAnimFrom, [
+        p3ComicTileStar2wg, 9
+      ], this, "start+=1.2");
+      tlp3cStar3w.play().call(starAnimTo, [
+        p3ComicTileStar3wg, 10
+      ], this, "start").call(starAnimFrom, [
+        p3ComicTileStar3wg, 10
+      ], this, "start+=1.2");
+      tlp3cStar4w.play().call(starAnimTo, [
+        p3ComicTileStar4wg, 11
+      ], this, "start").call(starAnimFrom, [
+        p3ComicTileStar4wg, 11
+      ], this, "start+=1.2");
+      tlp3cStar5w.play().call(starAnimTo, [
+        p3ComicTileStar5wg, 12
+      ], this, "start").call(starAnimFrom, [
+        p3ComicTileStar5wg, 12
+      ], this, "start+=1.2");
+      tlp3cStar6w.play().call(starAnimTo, [
+        p3ComicTileStar6wg, 13
+      ], this, "start").call(starAnimFrom, [
+        p3ComicTileStar6wg, 13
+      ], this, "start+=1.2");
+      tlp3cStar7w.play().call(starAnimTo, [
+        p3ComicTileStar7wg, 14
+      ], this, "start").call(starAnimFrom, [
+        p3ComicTileStar7wg, 14
+      ], this, "start+=1.2");
+    }
+    p3CStarsLoop();
+
+    //animation durations
+    var moonRise = 6,
+      treeSwaying = 3,
+      wolfDur1 = 1,
+      wolfDur2 = 1,
+      wolfDur3 = 1,
+      wolfDur35 = 1.5;
+
+    console.log("page 3 anim started");
+
+    tlp3CTreeSwaying.pause();
+    (function() {
+      for (var i = 0; i < treeElements.length - 1; i += 2) {
+        var elem0 = treeElements[i],
+          elem1 = treeElements[i + 1];
+        tlp3CTreeSwaying.to(elem0, treeSwaying, {
+          morphSVG: {
+            shape: elem1,
+            shapeIndex: "auto"
+          },
+          ease: Power1.easeInOut,
+          repeat: -1,
+          yoyo: true
+        }, 0);
+      }
+    })();
+    tlp3CTreeSwaying.play();
+
+    tlp3C.to(p3ComicTileMoon, moonRise, {
+      attr: {
+        cy: 68
+      },
+      ease: Power2.easeOut
+    }, "moonRise").to(p3ComicTileTreeRootL0, moonRise, {
+      morphSVG: {
+        shape: p3ComicTileTreeRootL1,
+        shapeIndex: "auto"
+      }
+    }, "moonRise").to(p3ComicTileTreeRootB0, moonRise, {
+      morphSVG: {
+        shape: p3ComicTileTreeRootB1,
+        shapeIndex: "auto"
+      }
+    }, "moonRise").to(p3ComicTileTreeRootR0, moonRise, {
+      morphSVG: {
+        shape: p3ComicTileTreeRootR1,
+        shapeIndex: "auto"
+      }
+    }, "moonRise").to(p3ComicTileTreeShadow0, moonRise, {
+      morphSVG: {
+        shape: p3ComicTileTreeShadow1,
+        shapeIndex: "auto"
+      }
+    }, "moonRise").to(p3ComicWolfShadow0, moonRise, {
+      morphSVG: {
+        shape: p3ComicWolfShadow1,
+        shapeIndex: "auto"
+      }
+    }, "moonRise");
+
+    // chat animation
+    tlp3C.to([
+      p3ComicChat1Box, p3ComicChat1Ico
+    ], 1, {
+      x: + 50,
+      y: + 50,
+      opacity: 1
+    }, "5")
+
+    // wolf jump
+    tlp3C.to(p3ComicWolfBody1, wolfDur1, {
+      morphSVG: {
+        shape: p3ComicWolfBody2,
+        shapeIndex: "auto"
+      }
+    }, "wolfSt1").to(p3ComicWolfShadow0, wolfDur1, {
+      morphSVG: {
+        shape: p3ComicWolfShadow2,
+        shapeIndex: "auto"
+      }
+    }, "wolfSt1").to([
+      p3ComicChat2Box, p3ComicChat2Ico
+    ], 1, {
+      x: - 30,
+      y: + 50,
+      opacity: 1
+    }).to(p3ComicWolfBody1, wolfDur2, {
+      morphSVG: {
+        shape: p3ComicWolfBody3,
+        shapeIndex: "auto"
+      }
+    }, "wolfSt2-=1").to(p3ComicWolfShadow0, wolfDur2, {
+      morphSVG: {
+        shape: p3ComicWolfShadow3,
+        shapeIndex: "auto"
+      }
+    }, "wolfSt2-=1").to(p3ComicWolfBody1, wolfDur3, {
+      morphSVG: {
+        shape: p3ComicWolfBody4,
+        shapeIndex: "auto"
+      }
+    }, "wolfSt3").to(p3ComicWolfShadow0, wolfDur3, {
+      morphSVG: {
+        shape: p3ComicWolfShadow4,
+        shapeIndex: "auto"
+      }
+    }, "wolfSt3").to(p3ComicWolfBody1, wolfDur35, {
+
+      x: "-80",
+      y: "+100"
+
+    }, "wolfSt3").to(p3ComicWolfShadow0, wolfDur35, {
+
+      x: "-80",
+      y: "+100"
+
+    }, "wolfSt3");
+
+  }
   pageLoader(p1TilesInput);
 };
